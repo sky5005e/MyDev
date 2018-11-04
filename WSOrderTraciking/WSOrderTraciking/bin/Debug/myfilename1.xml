@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<shiptos>
+  <shipto customer_no="02812" shipto_no="ORD0011279">
+    <shipto_name>Leo,  Raymond</shipto_name>
+    <address>
+      <attention>Leo,  Raymond</attention>
+      <address1>4470 Rue Beaubien Est</address1>
+      <address2>Suite 107  </address2>
+      <postal_zip>H1T 3Y8</postal_zip>
+      <province_state>QC</province_state>
+      <country>CA</country>
+      <city>Montreal</city>
+      <telephone>514374-1830 Ext.</telephone>
+      <fax></fax>
+      <email>raymond.leo@uqtr.ca</email>
+    </address>
+  </shipto>
+</shiptos>

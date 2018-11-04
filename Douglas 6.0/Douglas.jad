@@ -1,0 +1,85 @@
+RIM-COD-SHA1-9: 6c 99 74 e0 24 1b a2 3c 8e d8 c4 f6 d1 39 d3 14 38 2e 90 be
+RIM-COD-SHA1-8: 13 45 1d 57 58 77 c5 70 4a 72 de 7f ac 21 1c 6e 29 6d 0f 2a
+RIM-COD-SHA1-7: b6 88 7e 87 81 ee 7b 25 14 ae e6 20 5f 41 61 ba 3b e5 69 b1
+RIM-COD-SHA1-6: 4b f7 16 30 53 76 57 f4 ac 7c 5c 6d 3d 64 fc 1a e2 8e b0 ba
+RIM-COD-SHA1-5: a1 7d 01 09 0d f4 9a 7a c6 0d 6f 3d 9d ee 58 46 33 53 0d 46
+RIM-COD-SHA1-4: 99 8c e6 1b 37 84 f4 47 7c 02 84 6a b6 3b d5 fc 3b 3c e0 71
+RIM-COD-SHA1-3: fc 8b 74 35 b5 db 95 f4 d6 fa b1 9f 05 2e 8d f6 6b 03 54 66
+RIM-COD-SHA1-2: ca 29 68 b7 79 2c 43 15 9f 99 16 ed 73 eb 2c d2 a2 a8 a1 77
+RIM-COD-Size-23: 60240
+RIM-COD-SHA1-1: 3e a8 1d 2c e9 60 51 39 64 b6 c9 52 82 b3 45 db fb ff 23 5d
+RIM-COD-Size-22: 39948
+RIM-COD-Size-21: 52148
+RIM-COD-Size-20: 54668
+RIM-COD-URL-19: Douglas-19.cod
+RIM-COD-URL-18: Douglas-18.cod
+RIM-COD-URL-17: Douglas-17.cod
+RIM-COD-URL-16: Douglas-16.cod
+RIM-COD-URL-15: Douglas-15.cod
+RIM-COD-URL-14: Douglas-14.cod
+RIM-COD-URL-13: Douglas-13.cod
+RIM-COD-URL-12: Douglas-12.cod
+RIM-COD-Size: 71900
+RIM-COD-URL-11: Douglas-11.cod
+RIM-COD-URL-10: Douglas-10.cod
+MIDlet-Vendor: <unknown>
+Manifest-Version: 1.0
+RIM-MIDlet-Flags-1: 0
+RIM-COD-Size-19: 58448
+RIM-COD-Size-18: 56912
+RIM-COD-Size-17: 58076
+RIM-COD-Size-16: 43604
+RIM-COD-Size-15: 52352
+RIM-COD-Size-14: 50476
+RIM-COD-Size-13: 37080
+RIM-COD-Size-12: 56424
+RIM-COD-Size-11: 55648
+RIM-COD-Size-10: 50476
+MIDlet-Version: 0.0
+MicroEdition-Profile: MIDP-2.0
+RIM-COD-SHA1-23: 0b 3b 32 3a 9f d0 12 fa 11 6b ac 2a 8e 13 97 6e 76 65 ab aa
+RIM-COD-SHA1-22: 59 7d af a0 b5 f6 08 fd 08 f0 23 f5 26 7f 72 5e 0a 08 e0 5a
+RIM-COD-SHA1-21: 8d 2e 7c bd 69 46 c5 cd 14 8f 51 7e 12 1e bd 59 47 5d 28 fa
+RIM-COD-SHA1-20: fe 07 2a f7 9c f2 10 e8 c2 b8 77 54 ca 7b 21 d6 44 9e 69 b7
+RIM-COD-URL: Douglas.cod
+RIM-COD-Creation-Time: 1323866310
+MicroEdition-Configuration: CLDC-1.1
+MIDlet-Jar-URL: Douglas.jar
+RIM-COD-SHA1-19: aa d7 24 d4 ec 64 09 3e d8 c1 3c 9a 20 fa d1 dc 6e d8 46 c6
+RIM-COD-SHA1-18: 11 f5 62 8a 94 b1 18 3e 17 01 d0 3c 5b ec ee b8 f4 ee 09 38
+RIM-COD-SHA1-17: df 24 75 59 e8 bd 67 5a da 38 86 11 69 bd c9 1e cf 5f 6b 7a
+RIM-COD-SHA1-16: 6f ef 9f ed 67 7b a3 ca 98 7e ad db b9 d2 7d ee 0b 21 6f 9d
+RIM-COD-SHA1-15: 01 0f e8 c8 4d 7a 7c 31 db 87 a8 fb 94 a9 99 75 82 95 10 03
+RIM-COD-SHA1-14: bb ba 66 6c 8c 64 94 b4 9c f9 55 10 18 48 2e 1b b4 6f df 51
+RIM-COD-SHA1-13: 44 4d 4c d2 73 f8 a4 6d 9f e3 d9 89 c9 24 82 33 ba 63 42 7b
+RIM-COD-SHA1-12: 11 75 0d 4e 39 df a7 a1 16 4a ac d6 10 d7 a8 2c dc 70 92 72
+RIM-COD-Size-9: 53964
+RIM-COD-SHA1-11: 46 e5 62 71 1a 25 4d 91 46 d5 2a 17 ee fa 01 6a e1 0d 25 a8
+RIM-COD-Size-8: 50496
+RIM-COD-SHA1-10: 94 46 44 0c e2 71 48 5d 52 29 7c 1f c1 21 59 fa e5 cb cc 6d
+RIM-COD-Size-7: 54480
+RIM-COD-Size-6: 50516
+RIM-COD-Size-5: 56028
+RIM-COD-Size-4: 54168
+RIM-COD-Size-3: 55444
+RIM-COD-Size-2: 55440
+RIM-COD-Size-1: 62304
+MIDlet-1: ,,
+MIDlet-Name: Douglas
+RIM-COD-SHA1: 64 2b 49 16 21 0b b7 93 90 d1 d3 98 47 42 48 a9 05 fa 86 33
+RIM-COD-Module-Dependencies: net_rim_cldc,net_rim_xml,net_rim_xml_org,net_rim_locationapi,net_rim_bbapi_invoke,net_rim_bbapi_maps,net_rim_bb_maps_api,net_rim_bbapi_browser,net_rim_bb_browser_field2_api
+MIDlet-Jar-Size: 2543617
+RIM-COD-URL-9: Douglas-9.cod
+RIM-COD-URL-8: Douglas-8.cod
+RIM-COD-URL-7: Douglas-7.cod
+RIM-COD-URL-6: Douglas-6.cod
+RIM-COD-URL-5: Douglas-5.cod
+RIM-COD-URL-4: Douglas-4.cod
+RIM-COD-URL-3: Douglas-3.cod
+RIM-COD-URL-2: Douglas-2.cod
+RIM-COD-URL-1: Douglas-1.cod
+RIM-COD-Module-Name: Douglas
+RIM-COD-URL-23: Douglas-23.cod
+RIM-COD-URL-22: Douglas-22.cod
+RIM-COD-URL-21: Douglas-21.cod
+RIM-COD-URL-20: Douglas-20.cod

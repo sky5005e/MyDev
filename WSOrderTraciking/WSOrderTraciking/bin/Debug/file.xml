@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<OrderDetails xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <customer_no>212121212</customer_no>
+  <customer_name>name of</customer_name>
+  <Addresses>
+    <customers>
+      <attention>test</attention>
+      <address1>xxx</address1>
+      <address2>xxx</address2>
+      <province_state>pr</province_state>
+      <country>Co</country>
+      <city>ci</city>
+      <telephone>32312334344</telephone>
+      <fax>121212</fax>
+      <email>test@gmail.com</email>
+      <postal_zip>xx-xx</postal_zip>
+    </customers>
+    <shiptos>
+      <attention>stest</attention>
+      <address1>sxxx</address1>
+      <address2>sxxx</address2>
+      <province_state>spr</province_state>
+      <country>sCo</country>
+      <city>sci</city>
+      <telephone>32312334344</telephone>
+      <fax>121212</fax>
+      <email>test@gmail.com</email>
+      <postal_zip>xx-xx</postal_zip>
+    </shiptos>
+  </Addresses>
+</OrderDetails>

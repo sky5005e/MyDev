@@ -1,0 +1,9 @@
+C:\Users\Sky\Desktop\ProFinal\WSftp\WSftp\bin\Release\WSftp.exe
+C:\Users\Sky\Desktop\ProFinal\WSftp\WSftp\bin\Release\WSftp.pdb
+C:\Users\Sky\Desktop\ProFinal\WSftp\WSftp\obj\x86\Release\ResolveAssemblyReference.cache
+C:\Users\Sky\Desktop\ProFinal\WSftp\WSftp\obj\x86\Release\WSftp.ProjectInstaller.resources
+C:\Users\Sky\Desktop\ProFinal\WSftp\WSftp\obj\x86\Release\WSftp.Service1.resources
+C:\Users\Sky\Desktop\ProFinal\WSftp\WSftp\obj\x86\Release\GenerateResource.read.1.tlog
+C:\Users\Sky\Desktop\ProFinal\WSftp\WSftp\obj\x86\Release\GenerateResource.write.1.tlog
+C:\Users\Sky\Desktop\ProFinal\WSftp\WSftp\obj\x86\Release\WSftp.exe
+C:\Users\Sky\Desktop\ProFinal\WSftp\WSftp\obj\x86\Release\WSftp.pdb

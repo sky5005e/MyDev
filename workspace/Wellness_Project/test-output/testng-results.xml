@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="320578" started-at="2017-04-12T17:08:21Z" finished-at="2017-04-12T17:13:42Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="320578" started-at="2017-04-12T17:08:21Z" finished-at="2017-04-12T17:13:42Z">
+      <class name="Meschinowellness_DAFoodTracker_QuickTool_DDT">
+        <test-method status="PASS" signature="suiteSetup()[pri:0, instance:Meschinowellness_DAFoodTracker_QuickTool_DDT@66a3ffec]" name="suiteSetup" is-config="true" duration-ms="66185" started-at="2017-04-12T22:37:15Z" finished-at="2017-04-12T22:38:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- suiteSetup -->
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:Meschinowellness_DAFoodTracker_QuickTool_DDT@66a3ffec]" name="beforeTest" is-config="true" duration-ms="69034" started-at="2017-04-12T22:38:46Z" finished-at="2017-04-12T22:39:55Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method status="PASS" signature="MeschinoWellness(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:Meschinowellness_DAFoodTracker_QuickTool_DDT@66a3ffec]" name="MeschinoWellness" duration-ms="102374" started-at="2017-04-12T22:39:55Z" data-provider="TestDataProvider" finished-at="2017-04-12T22:41:37Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[M1HRAtest@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Test123@]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[6230]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[AddFood]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Bread]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[20]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Future]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[BreakFast]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[Verify that, system does not accept the future date]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- MeschinoWellness -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:Meschinowellness_DAFoodTracker_QuickTool_DDT@66a3ffec]" name="afterTest" is-config="true" duration-ms="1" started-at="2017-04-12T22:41:37Z" finished-at="2017-04-12T22:41:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:Meschinowellness_DAFoodTracker_QuickTool_DDT@66a3ffec]" name="beforeTest" is-config="true" duration-ms="7033" started-at="2017-04-12T22:41:37Z" finished-at="2017-04-12T22:41:44Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method status="PASS" signature="MeschinoWellness(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:Meschinowellness_DAFoodTracker_QuickTool_DDT@66a3ffec]" name="MeschinoWellness" duration-ms="58101" started-at="2017-04-12T22:41:44Z" data-provider="TestDataProvider" finished-at="2017-04-12T22:42:43Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[M1HRAtest@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Test123@]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[3854]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[AddFood]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Milk]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[45]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Current]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[BreakFast]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[Verify that, system successfully saves food item via Quick Tool in D&A Manager]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- MeschinoWellness -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:Meschinowellness_DAFoodTracker_QuickTool_DDT@66a3ffec]" name="afterTest" is-config="true" duration-ms="1" started-at="2017-04-12T22:42:43Z" finished-at="2017-04-12T22:42:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:Meschinowellness_DAFoodTracker_QuickTool_DDT@66a3ffec]" name="beforeTest" is-config="true" duration-ms="4442" started-at="2017-04-12T22:42:43Z" finished-at="2017-04-12T22:42:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method status="PASS" signature="MeschinoWellness(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:Meschinowellness_DAFoodTracker_QuickTool_DDT@66a3ffec]" name="MeschinoWellness" duration-ms="55040" started-at="2017-04-12T22:42:47Z" data-provider="TestDataProvider" finished-at="2017-04-12T22:43:42Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[M1HRAtest@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Test123@]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[4813]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[AddFood]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Apple]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[-20]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Current]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[BreakFast]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[Verify that, system does not accept negative value in 'Enter Total Calorie' field for 'Quick Tool' on 'Diet & Activity Manager' page]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- MeschinoWellness -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:Meschinowellness_DAFoodTracker_QuickTool_DDT@66a3ffec]" name="afterTest" is-config="true" duration-ms="1" started-at="2017-04-12T22:43:42Z" finished-at="2017-04-12T22:43:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+        <test-method status="PASS" signature="suiteTeardown()[pri:0, instance:Meschinowellness_DAFoodTracker_QuickTool_DDT@66a3ffec]" name="suiteTeardown" is-config="true" duration-ms="2093" started-at="2017-04-12T22:43:42Z" finished-at="2017-04-12T22:43:45Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- suiteTeardown -->
+      </class> <!-- Meschinowellness_DAFoodTracker_QuickTool_DDT -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

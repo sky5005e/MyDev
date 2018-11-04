@@ -1,0 +1,10 @@
+C:\Users\Sky\Desktop\ProFinal\WSOrderTraciking\WSOrderTraciking\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Sky\Desktop\ProFinal\WSOrderTraciking\WSOrderTraciking\bin\Debug\WSOrderTraciking.exe
+C:\Users\Sky\Desktop\ProFinal\WSOrderTraciking\WSOrderTraciking\bin\Debug\WSOrderTraciking.pdb
+C:\Users\Sky\Desktop\ProFinal\WSOrderTraciking\WSOrderTraciking\bin\Debug\itextsharp.dll
+C:\Users\Sky\Desktop\ProFinal\WSOrderTraciking\WSOrderTraciking\obj\x86\Debug\WSOrderTraciking.exe
+C:\Users\Sky\Desktop\ProFinal\WSOrderTraciking\WSOrderTraciking\obj\x86\Debug\WSOrderTraciking.pdb
+C:\Users\Sky\Desktop\ProFinal\WSOrderTraciking\WSOrderTraciking\obj\x86\Debug\WSOrderTraciking.ProjectInstaller.resources
+C:\Users\Sky\Desktop\ProFinal\WSOrderTraciking\WSOrderTraciking\obj\x86\Debug\WSOrderTraciking.Service1.resources
+C:\Users\Sky\Desktop\ProFinal\WSOrderTraciking\WSOrderTraciking\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Sky\Desktop\ProFinal\WSOrderTraciking\WSOrderTraciking\obj\x86\Debug\GenerateResource.write.1.tlog

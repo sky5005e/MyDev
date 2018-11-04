@@ -1,0 +1,168 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00000000, pid=1580, tid=1196
+#
+# JRE version: 6.0_23-b05
+# Java VM: Java HotSpot(TM) Client VM (19.0-b09 mixed mode, sharing windows-x86 )
+# Problematic frame:
+# C  0x00000000
+#
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0051a800):  JavaThread "main" [_thread_in_native, id=1196, stack(0x00520000,0x00570000)]
+
+siginfo: ExceptionCode=0xc0000005, reading address 0x00000000
+
+Registers:
+EAX=0x0056ed4c, EBX=0x00000000, ECX=0x0000000d, EDX=0x0000000d
+ESP=0x0056ecbc, EBP=0x0056ecf4, ESI=0x779a5120, EDI=0x00000000
+EIP=0x00000000, EFLAGS=0x00010203
+
+Register to memory mapping:
+
+EAX=0x0056ed4c
+0x0056ed4c is pointing into the stack for thread: 0x0051a800
+"main" prio=6 tid=0x0051a800 nid=0x4ac runnable [0x0056f000]
+   java.lang.Thread.State: RUNNABLE
+
+EBX=0x00000000
+0x00000000 is pointing to unknown location
+
+ECX=0x0000000d
+0x0000000d is pointing to unknown location
+
+EDX=0x0000000d
+0x0000000d is pointing to unknown location
+
+ESP=0x0056ecbc
+0x0056ecbc is pointing into the stack for thread: 0x0051a800
+"main" prio=6 tid=0x0051a800 nid=0x4ac runnable [0x0056f000]
+   java.lang.Thread.State: RUNNABLE
+
+EBP=0x0056ecf4
+0x0056ecf4 is pointing into the stack for thread: 0x0051a800
+"main" prio=6 tid=0x0051a800 nid=0x4ac runnable [0x0056f000]
+   java.lang.Thread.State: RUNNABLE
+
+ESI=0x779a5120
+0x779a5120 is pointing to unknown location
+
+EDI=0x00000000
+0x00000000 is pointing to unknown location
+
+
+Top of Stack: (sp=0x0056ecbc)
+0x0056ecbc:   2002798b 000001d8 00000000 00000000
+0x0056eccc:   00000000 0056ed4c 0056ed94 00000268
+0x0056ecdc:   00000003 00000001 0056ed78 00000000
+0x0056ecec:   00580056 03fa7808 0056f000 75db8a8a
+0x0056ecfc:   000001d8 00000000 00000000 00000000
+0x0056ed0c:   0056ed4c 0056ed94 00000268 00000003
+0x0056ed1c:   00000001 0056ed78 00000000 0056f2fa
+0x0056ed2c:   03fa785e 03fa7808 00000018 00000000 
+
+Instructions: (pc=0x00000000)
+0xfffffff0:   
+
+
+Stack: [0x00520000,0x00570000],  sp=0x0056ecbc,  free space=315k
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  java.io.WinNTFileSystem.canonicalize0(Ljava/lang/String;)Ljava/lang/String;+0
+j  java.io.Win32FileSystem.canonicalize(Ljava/lang/String;)Ljava/lang/String;+298
+j  java.io.File.getCanonicalPath()Ljava/lang/String;+10
+j  net.rim.tools.compiler.Compiler.p()V+1051
+j  net.rim.tools.compiler.Compiler.a(Ljava/lang/Object;Lnet/rim/tools/compiler/f/f;)Lnet/rim/tools/compiler/Compiler;+444
+j  net.rim.tools.compiler.Compiler.compile([Ljava/lang/String;)I+754
+j  net.rim.tools.compiler.Compiler.main([Ljava/lang/String;)V+7
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x005d6000 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=1272, stack(0x03ea0000,0x03ef0000)]
+  0x005c0800 JavaThread "CompilerThread0" daemon [_thread_blocked, id=4052, stack(0x03e50000,0x03ea0000)]
+  0x005bd800 JavaThread "Attach Listener" daemon [_thread_blocked, id=3784, stack(0x03e00000,0x03e50000)]
+  0x005bc800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=3844, stack(0x03db0000,0x03e00000)]
+  0x005b7800 JavaThread "Finalizer" daemon [_thread_blocked, id=2016, stack(0x03d60000,0x03db0000)]
+  0x005b2c00 JavaThread "Reference Handler" daemon [_thread_blocked, id=3444, stack(0x03d10000,0x03d60000)]
+=>0x0051a800 JavaThread "main" [_thread_in_native, id=1196, stack(0x00520000,0x00570000)]
+
+Other Threads:
+  0x005b1800 VMThread [stack: 0x03cc0000,0x03d10000] [id=2020]
+  0x005e7400 WatcherThread [stack: 0x03ef0000,0x03f40000] [id=640]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ def new generation   total 4928K, used 3294K [0x239d0000, 0x23f20000, 0x28f20000)
+  eden space 4416K,  74% used [0x239d0000, 0x23d07b70, 0x23e20000)
+  from space 512K,   0% used [0x23e20000, 0x23e20000, 0x23ea0000)
+  to   space 512K,   0% used [0x23ea0000, 0x23ea0000, 0x23f20000)
+ tenured generation   total 10944K, used 0K [0x28f20000, 0x299d0000, 0x339d0000)
+   the space 10944K,   0% used [0x28f20000, 0x28f20000, 0x28f20200, 0x299d0000)
+ compacting perm gen  total 12288K, used 370K [0x339d0000, 0x345d0000, 0x379d0000)
+   the space 12288K,   3% used [0x339d0000, 0x33a2cb68, 0x33a2cc00, 0x345d0000)
+    ro space 10240K,  51% used [0x379d0000, 0x37efbd20, 0x37efbe00, 0x383d0000)
+    rw space 12288K,  54% used [0x383d0000, 0x38a67d58, 0x38a67e00, 0x38fd0000)
+
+Dynamic libraries:
+0x00400000 - 0x00424000 	C:\Windows\system32\java.exe
+0x77960000 - 0x77a9c000 	C:\Windows\SYSTEM32\ntdll.dll
+0x76d60000 - 0x76e34000 	C:\Windows\system32\kernel32.dll
+0x75db0000 - 0x75dfa000 	C:\Windows\system32\KERNELBASE.dll
+0x75e00000 - 0x75ea0000 	C:\Windows\system32\ADVAPI32.dll
+0x776f0000 - 0x7779c000 	C:\Windows\system32\msvcrt.dll
+0x77410000 - 0x77429000 	C:\Windows\SYSTEM32\sechost.dll
+0x76e80000 - 0x76f21000 	C:\Windows\system32\RPCRT4.dll
+0x7c340000 - 0x7c396000 	C:\Program Files\Java\jre6\bin\msvcr71.dll
+0x6d7f0000 - 0x6da9c000 	C:\Program Files\Java\jre6\bin\client\jvm.dll
+0x76f30000 - 0x76ff9000 	C:\Windows\system32\USER32.dll
+0x77640000 - 0x7768e000 	C:\Windows\system32\GDI32.dll
+0x77550000 - 0x7755a000 	C:\Windows\system32\LPK.dll
+0x77060000 - 0x770fd000 	C:\Windows\system32\USP10.dll
+0x73f70000 - 0x73fa2000 	C:\Windows\system32\WINMM.dll
+0x77250000 - 0x7726f000 	C:\Windows\system32\IMM32.DLL
+0x77ac0000 - 0x77b8c000 	C:\Windows\system32\MSCTF.dll
+0x75a00000 - 0x75a4b000 	C:\Windows\system32\apphelp.dll
+0x6d580000 - 0x6d59a000 	C:\PROGRA~1\KASPER~1\KASPER~1\mzvkbd3.dll
+0x77430000 - 0x77435000 	C:\Windows\system32\PSAPI.DLL
+0x6d7a0000 - 0x6d7ac000 	C:\Program Files\Java\jre6\bin\verify.dll
+0x6d320000 - 0x6d33f000 	C:\Program Files\Java\jre6\bin\java.dll
+0x6d280000 - 0x6d288000 	C:\Program Files\Java\jre6\bin\hpi.dll
+0x6d7e0000 - 0x6d7ef000 	C:\Program Files\Java\jre6\bin\zip.dll
+
+VM Arguments:
+jvm_args: -Xmx256m 
+java_command: net.rim.tools.compiler.Compiler -exepath=D:\Research In Motion\BlackBerry JDE 6.0.0\bin -quiet codename=Douglas Douglas.rapc warnkey=0x52424200;0x52525400;0x52435200 @Douglas_build.files
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Java\jdk1.6.0_23\bin
+USERNAME=admin
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=x86 Family 6 Model 23 Stepping 10, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 7 Build 7600 
+
+CPU:total 2 (2 cores per cpu, 1 threads per core) family 6 model 23 stepping 10, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3
+
+Memory: 4k page, physical 2084704k(849420k free), swap 4169408k(2031284k free)
+
+vm_info: Java HotSpot(TM) Client VM (19.0-b09) for windows-x86 JRE (1.6.0_23-b05), built on Nov 12 2010 15:00:43 by "java_re" with MS VC++ 7.1 (VS2003)
+
+time: Thu May 12 11:36:11 2011
+elapsed time: 0 seconds
+

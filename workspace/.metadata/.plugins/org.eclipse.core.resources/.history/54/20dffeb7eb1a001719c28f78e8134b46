@@ -1,0 +1,290 @@
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebDriverException;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.testng.Assert;
+import org.testng.ITestResult;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+public class Meschinowellness_M1CreateMyWellnessPlan {
+
+    WebDriver d;
+    private CharSequence click;
+
+    @BeforeTest
+    public void Setup() throws Exception {
+        // Launch browser
+        //System.setProperty("webdriver.chrome.driver", "C:\\chromedriver_win32\\chromedriver.exe");
+        System.setProperty("webdriver.gecko.driver", "C:\\gecko\\geckodriver.exe");
+        
+        //d = new ChromeDriver();
+        d = new FirefoxDriver();
+        d.manage().window().maximize();
+        d.manage().deleteAllCookies();
+        d.manage().timeouts().implicitlyWait(1, TimeUnit.MINUTES);
+        d.get("http://demo-meschinowellness.azurewebsites.net/Account/Login");
+        d.manage().timeouts().implicitlyWait(1, TimeUnit.MINUTES);
+    }
+
+    @Test(priority = 1)
+    public void login() throws Exception {
+     // Enter Username
+        d.findElement(By.id("UserName")).click();
+        Thread.sleep(1000);
+        d.findElement(By.id("UserName")).sendKeys("M1HRAtest@gmail.com");
+        // Enter password
+        d.findElement(By.id("Password")).click();
+        d.findElement(By.id("Password")).sendKeys("Test123@");
+        // Click on login button
+        d.findElement(By.id("btnLogin")).click();
+        d.manage().timeouts().implicitlyWait(1, TimeUnit.MINUTES);
+        if (d.findElement(By.id("dashboard")) != null) {
+            System.out.println("Dashboard Title  is verified");
+        } else {
+            System.out.println("Dashboard Title  is not  Present");
+        }
+        Thread.sleep(5000);
+        System.out.println("User login successful");
+        try
+        {   
+            GetPopupContent("chklistModelVideoPopup","close");
+        } catch (Exception  e) {
+            System.out.println("Exception while closing popup " + e.getMessage());
+        }
+    }
+
+    @Test(priority = 2)
+    public void MyWellnessPlan() throws Exception {
+        // Click on My Wellness Report tab
+        WebElement mWellnessWalletPage = d.findElement(By.id("wallet-top-tabs"));
+        WebElement mWellnessWalletPlan = mWellnessWalletPage.findElement(By.id("riskreport"));
+        Thread.sleep(5000);
+        mWellnessWalletPlan.click();
+        Thread.sleep(10000);
+        System.out.println("Text = Getting  Major Health Risks");
+        List<WebElement> list = getListOfLinks("id_riskList");
+        Assert.assertNotEquals(0, list.size());
+        for (int i = 1, l = list.size(); i < l; i++) {
+            validateMajorHealthRisks("id_riskList", 0, i, "div-tab-content", "h3");
+        }
+        d.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+    }
+    // Getting the ListOfLinks 
+    private List<WebElement> getListOfLinks(String sectionName) {
+        List<WebElement> sections = new ArrayList<WebElement>();
+        ArrayList<WebElement> mainTag = (ArrayList<WebElement>) d.findElements(By.id(sectionName));
+        sections = mainTag.get(0).findElements(By.tagName("li"));
+        return sections;
+    }
+        // Method for clickCorrespondingLink
+    public void clickCorrespondingLink(int elementIndex) {
+        List<WebElement> list = getListOfLinks("id_riskList");
+        WebElement anchorTag = list.get(elementIndex).findElement(By.tagName("a"));
+        Assert.assertNotNull(anchorTag);
+        anchorTag.click();
+    }
+        // Method for validateMajorHealthRisks
+    private void validateMajorHealthRisks(String sectionName, int sectionIndex, int elementIndex,
+            String headingContainer, String headingSelector) throws InterruptedException {
+        // Getting the left side menu and clicking it
+        List<WebElement> list = getListOfLinks("id_riskList");
+        WebElement currentLIItem = list.get(elementIndex);
+        // getting left side menu elements into anchor tag
+        WebElement anchorTag = list.get(elementIndex).findElement(By.tagName("a"));
+        Assert.assertNotNull(anchorTag);
+        String currentTabId = anchorTag.getAttribute("href");
+        String[] splited = currentTabId.split("#");
+        currentTabId = splited[1];
+        System.out.println("Current Tab : " + currentTabId);
+        // click on left menu side element
+        ((JavascriptExecutor)d).executeScript("arguments[0].click();", anchorTag);
+        //anchorTag.click();
+        Thread.sleep(5000);
+        System.out.println("Current Major Health Risks Tilte is = " + currentLIItem.getText().trim());
+
+        // Getting the headers in the CreateMyWellnessPlan page
+        WebElement headingContainerElement = d.findElement(By.id(headingContainer));
+        Assert.assertNotNull(headingContainerElement);
+
+        // List of the the headings on right hand side  in the CreateMyWellnessPlan page
+        List<WebElement> headers = headingContainerElement.findElements(By.tagName("h3"));
+        //For loop for getting heading text
+        for (WebElement element : headers) {
+            if (element.isDisplayed()) {
+                System.out.println("Heading Texts  = " + element.getText().trim());
+            }
+        }
+        // Displays the headings on right hand side  in the CreateMyWellnessPlan page
+        WebElement currentTabContent = d.findElement(By.id(currentTabId));
+        // Getting list of images in current tab(right hand side  in the CreateMyWellnessPlan page)
+        List<WebElement> images = currentTabContent.findElements(By.className("graph"));
+        System.out.println("Number of Images present = " + images.size());
+        //For loop for getting the image dial color 
+        for (WebElement element : images) {
+            WebElement imagedial = element.findElement(By.tagName("input"));
+            System.out.println("Image Dial Color  = " + GetColorName(imagedial.getAttribute("data-fgcolor")));
+        }
+        // Getting list of recommended goals
+        WebElement recommendedGoals = currentTabContent.findElement(By.className("recomended-box"));
+        // Getting list of recommended  goals buttons
+        List<WebElement> recommenededButtons = recommendedGoals.findElements(By.tagName("a"));
+        if (recommenededButtons != null) {
+            System.out.println("recommenededbuttons count = " + recommenededButtons.size());
+            //For loop for recommended goals buttons
+            for (int i = 0, l = recommenededButtons.size(); i < l; i++) {
+                clickCorrespondingLink(elementIndex);
+                Thread.sleep(5000);
+                validaterecommendedgoals(currentTabId, "recomended-box", 0, i);
+            }
+        }
+    }
+    public String GetColorName (String ColorCode)
+    {
+        String colorName = "Green";
+        switch(ColorCode){  
+        case "#00B40D": 
+            colorName = "Green";
+            break;
+        case "#B61300": 
+            colorName = "Red";
+            break;
+        case "#FFDA0E": 
+            colorName = "Yellow";
+            break;
+        default:
+            colorName = "Green";
+            break;  
+        }  
+        return colorName;
+    }
+    public void validaterecommendedgoals(String contentName, String sectionName, int sectionIndex, int elementIndex)
+            throws InterruptedException {
+        WebElement currentTabContent = d.findElement(By.id(contentName));
+        WebElement recommendedGoalSection = currentTabContent.findElement(By.className(sectionName));
+        List<WebElement> recommenededButtonsGroup = null;
+        recommenededButtonsGroup = recommendedGoalSection.findElements(By.tagName("a"));
+        WebElement rdButton = recommenededButtonsGroup.get(elementIndex);
+        String btnText = rdButton.getText();
+        if (rdButton.isDisplayed() && btnText.equalsIgnoreCase("SET GOAL")) {
+        
+            // if condition for tab_3
+            if (contentName.equals("tab_3")) {
+                rdButton.click();
+                Thread.sleep(5000);
+                // Getting the pop box elements
+                WebElement popUpBox = d.findElement(By.id("SetGoalLossGainWeightDialog"));
+                WebElement popUpBoxContent = popUpBox.findElement(By.className("modal-content"));
+                // Getting the title pop box
+                WebElement titlePopUpBox = popUpBoxContent.findElement(By.className("modal-header"));
+                System.out.println("Title Text = " + titlePopUpBox.getText().trim());
+                // Getting the footer elements from pop box
+                WebElement footerPopUpBox = popUpBox.findElement(By.className("modal-footer"));
+                List<WebElement> cancelButton = footerPopUpBox.findElements(By.tagName("button"));
+                // Click on cancel button
+                Actions actions = new Actions(d);
+                actions.moveToElement(cancelButton.get(0)).click().perform();
+                Thread.sleep(5000);
+            } else {
+                // Click on recommendedGoal button
+                rdButton.click();
+                d.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+                System.out.println("Text= Clicked on recommendedGoal button");
+                System.out.println("Text= Navigating to next Page...");
+                // active goal page title verification
+                WebElement activeGoalHeading = d.findElement(By.className("active-goal-page"));
+                WebElement titleElement = activeGoalHeading.findElement(By.className("title"));
+                System.out.println("Title Text = " + titleElement.getText().trim());
+                WaitForPageLoaded();
+                // Click on back button
+                WebElement backButton = activeGoalHeading.findElement(By.className("btn-default"));
+                backButton.click();
+                System.out.println("backButton Clicked");
+                Thread.sleep(10000);
+                d.manage().timeouts().implicitlyWait(1, TimeUnit.MINUTES);
+                // Click on back button myWellnessPlannerPage
+                //WebElement myWellnessPlannerPage = d.findElement(By.id("wallet-top-tabs"));
+                //WebElement backButtonMWallet = myWellnessPlannerPage.findElement(By.id("anchorBackButton"));
+                //Thread.sleep(5000);
+                // Click on back button MWallet Page
+                //Actions actions = new Actions(d);
+                //actions.moveToElement(backButtonMWallet).click().perform();
+                System.out.println("backButtonMWallet Clicked");
+                Thread.sleep(5000);
+                System.out.println("current element is verified ");
+                Thread.sleep(5000);
+            }
+        }
+    }
+    public void GetPopupContent(String ElementId, String classname)
+    {
+        WebElement popupElement = d.findElement(By.id(ElementId));
+        WebElement element =  popupElement.findElement(By.className(classname));//.click();
+        ((JavascriptExecutor)d).executeScript("arguments[0].click();", element);
+    }
+    
+ // Method to wait for the next page to load
+    public void WaitForPageLoaded() {
+        int maxWait = 30;
+        long tStart = System.currentTimeMillis();
+        long elapsedSeconds = 0;
+        for (; elapsedSeconds < maxWait;) {
+            try {
+                    d.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+                    if (d.getCurrentUrl().contains("ErrorCode=1052")) {
+                     // Error page, exit immediately instead of keep on waiting.
+                    System.out.println("\nErrorCode=1052");
+                    return;
+                }
+                System.out.println("\nNew page successfully loaded");
+                return;
+            } catch (WebDriverException ex) {
+                // Intentionally left blank.
+            }
+            elapsedSeconds = (System.currentTimeMillis() - tStart) / 1000;
+        }
+        System.out.println("\n waitForPageLoaded(): elapsedSeconds= " + elapsedSeconds);
+    }
+ 
+    
+    @AfterMethod
+    public void logout(ITestResult result) throws Exception {
+        // Verify if test fails
+        if (ITestResult.FAILURE == result.getStatus()) {
+            try {
+                // Create reference of TakesScreenshot
+                TakesScreenshot ts = (TakesScreenshot) d;
+                // capture screenshot
+                File source = ts.getScreenshotAs(OutputType.FILE);
+                // Copy files to specific location to store screenshot in our
+                // project home directory
+                // result.getName() will return name of test case so that
+                // screenshot name will be same
+                File file = new File("./Screenshots/" + result.getName() + ".png");
+                FileUtils.copyFile(source, file);
+                Throwable errorDetail = result.getThrowable();
+                System.out.println("Screenshot taken");
+            } catch (Exception e) {
+                System.out.println("Exception while taking screenshot " + e.getMessage());
+            }
+        }
+        // close application
+        // d.quit();
+    }
+
+}
+

@@ -1,0 +1,23 @@
+/*
+ * UIScreen.java
+ *
+ * © Research In Motion Limited, 2006
+ * Confidential and proprietary.
+ */
+
+package com.douglas.main;
+import res.layout.*;
+import net.rim.device.api.ui.*;
+import net.rim.device.api.ui.component.*;
+import net.rim.device.api.ui.container.*;
+
+
+/**
+ * The base screen for all the screens in the UIExample Project
+ */
+public class UIScreen extends MainScreen 
+{  
+   HeaderLabel HT=new HeaderLabel("Top 10 Damen",this);
+   
+   DouglasFooter douglasFT=new DouglasFooter(this);
+}

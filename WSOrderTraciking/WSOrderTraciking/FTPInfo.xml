@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<FTPInfo>
+	<ftpcredentials>
+		<ftppath>ftp://ftp.catalystbiz.com/for_adeeva/</ftppath>
+		<username>adeeva</username>
+		<password>MwE7YUdt</password>
+	</ftpcredentials>
+	<ftpuploadpath>
+		<ftpforadeeva>ftp://ftp.catalystbiz.com/for_adeeva/archive/</ftpforadeeva>
+		<ftpforccm>ftp://ftp.catalystbiz.com/for_ccm/</ftpforccm>
+	</ftpuploadpath>
+	<ftpdownloadpath>
+		<localdrive>D:\CRM\CRM\WWWRoot\CustomPages\OrderTracking\CatalystXML\</localdrive>
+	</ftpdownloadpath>
+</FTPInfo>
