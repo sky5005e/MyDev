@@ -1,0 +1,2 @@
+C:\Users\g521753\Desktop\Hardidsk\MyDev\CreatePDF\CreatePDF\bin\Release\CreatePDF.exe.config
+C:\Users\g521753\Desktop\Hardidsk\MyDev\CreatePDF\CreatePDF\obj\x86\Release\CreatePDF.csprojResolveAssemblyReference.cache

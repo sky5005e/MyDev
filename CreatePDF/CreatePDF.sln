@@ -1,9 +1,9 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreatePDF", "CreatePDF\CreatePDF.csproj", "{C87BA3ED-D779-4C47-BB98-97BC85FF83A2}"
-EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetUPTest", "..\..\..\..\Desktop\SetUPTest\SetUPTest.vdproj", "{CFB487EC-1E1D-4FDE-BAB3-B26A12798236}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,8 +15,6 @@ Global
 		{C87BA3ED-D779-4C47-BB98-97BC85FF83A2}.Debug|x86.Build.0 = Debug|x86
 		{C87BA3ED-D779-4C47-BB98-97BC85FF83A2}.Release|x86.ActiveCfg = Release|x86
 		{C87BA3ED-D779-4C47-BB98-97BC85FF83A2}.Release|x86.Build.0 = Release|x86
-		{CFB487EC-1E1D-4FDE-BAB3-B26A12798236}.Debug|x86.ActiveCfg = Debug
-		{CFB487EC-1E1D-4FDE-BAB3-B26A12798236}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

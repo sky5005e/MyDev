@@ -9,3 +9,9 @@ C:\Users\Sky\Desktop\ProFinal\CreatePDF\CreatePDF\obj\x86\Debug\CreatePDF.pdb
 C:\Users\Sky\Desktop\ProFinal\CreatePDF\CreatePDF\bin\Debug\CreatePDF.exe
 C:\Users\Sky\Desktop\ProFinal\CreatePDF\CreatePDF\bin\Debug\CreatePDF.pdb
 C:\Users\Sky\Desktop\ProFinal\CreatePDF\CreatePDF\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\g521753\Desktop\Hardidsk\MyDev\CreatePDF\CreatePDF\obj\x86\Debug\CreatePDF.exe
+C:\Users\g521753\Desktop\Hardidsk\MyDev\CreatePDF\CreatePDF\obj\x86\Debug\CreatePDF.pdb
+C:\Users\g521753\Desktop\Hardidsk\MyDev\CreatePDF\CreatePDF\bin\Debug\CreatePDF.exe.config
+C:\Users\g521753\Desktop\Hardidsk\MyDev\CreatePDF\CreatePDF\bin\Debug\CreatePDF.exe
+C:\Users\g521753\Desktop\Hardidsk\MyDev\CreatePDF\CreatePDF\bin\Debug\CreatePDF.pdb
+C:\Users\g521753\Desktop\Hardidsk\MyDev\CreatePDF\CreatePDF\obj\x86\Debug\CreatePDF.csprojResolveAssemblyReference.cache

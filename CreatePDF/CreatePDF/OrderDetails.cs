@@ -218,13 +218,10 @@ namespace CreatePDF
                     objOrder.OrderItems = lstOrderItems;
 
                 }
-
-                //System.Xml.Serialization.XmlSerializer serializer = new System.Xml.Serialization.XmlSerializer(typeof(OrderDetails));
-                //serializer.Serialize(System.IO.File.Create(@"D:\CRM\CRM\WWWRoot\CustomPages\OrderTracking\CatalystXML\" + "file" + DateTime.Now.Ticks + ".xml"), objOrder);
             }
             catch (Exception ex)
             {
-                CommonCls.ErrorMessage(ex, @"D:\CRM\CRM\WWWRoot\CustomPages\OrderTracking\CatalystXML\" + "error" + DateTime.Now.Ticks + ".txt");
+                LogHelper.LogError(ex);
             }
 
             return objOrder;

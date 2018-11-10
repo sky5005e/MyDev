@@ -10,8 +10,6 @@ namespace CreatePDF
     public class DataAccess
     {
         const String DBConn = @"Data Source=APSVR;Initial Catalog=CRM;Integrated Security=True";
-
-        //const String DBConn =  @"Data Source=sky-pc\SQLExpress;Initial Catalog=CRM;user id ='sageCRM';password='sage123'";
         public DataAccess()
         {
         }

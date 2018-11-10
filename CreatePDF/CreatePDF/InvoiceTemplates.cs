@@ -300,7 +300,7 @@ namespace CreatePDF
 
             catch (Exception ex)
             {
-                CommonCls.ErrorMessage(ex, @"D:\CRM\CRM\WWWRoot\CustomPages\OrderTracking\CatalystXML\" + "file" + DateTime.Now.Ticks + ".txt");
+                LogHelper.LogError(ex);
                 throw ex;
             }
 
