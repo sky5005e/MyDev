@@ -10,3 +10,5 @@ C:\Users\Sky\Desktop\ProFinal\WSOrderTraciking\WSOrderTraciking\obj\x86\Release\
 C:\Users\Sky\Desktop\ProFinal\WSOrderTraciking\WSOrderTraciking\obj\x86\Release\WSOrderTraciking.pdb
 D:\Windows_Backup\ProFinal\WSOrderTraciking\WSOrderTraciking\obj\x86\Release\WSOrderTraciking.exe
 D:\Windows_Backup\ProFinal\WSOrderTraciking\WSOrderTraciking\obj\x86\Release\WSOrderTraciking.pdb
+C:\Users\g521753\Desktop\Hardidsk\MyDev\WSOrderTraciking\WSOrderTraciking\obj\x86\Release\WSOrderTraciking.exe
+C:\Users\g521753\Desktop\Hardidsk\MyDev\WSOrderTraciking\WSOrderTraciking\obj\x86\Release\WSOrderTraciking.pdb
