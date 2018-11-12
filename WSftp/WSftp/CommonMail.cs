@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Net.Mail;
 using System.Net;
+using WSftp;
 
 /// <summary>
 /// Summary description for CommonMail
@@ -70,8 +71,7 @@ public class CommonMail
         }
         catch (Exception ex)
         {
-            ex = null;
-
+            LogHelper.LogError(ex);
             Result = false;
         }
 
@@ -156,8 +156,7 @@ public class CommonMail
         catch (Exception ex)
         {
 
-            ex = null;
-
+            LogHelper.LogError(ex);
             Result = false;
         }
 

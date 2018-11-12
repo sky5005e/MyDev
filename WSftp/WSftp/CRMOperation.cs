@@ -204,6 +204,8 @@ namespace WSftp
             }
             catch (Exception ex)
             {
+
+                LogHelper.LogError(ex);
                 throw ex;
             }
 

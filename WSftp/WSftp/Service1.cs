@@ -82,7 +82,8 @@ namespace WSftp
             }
             catch (Exception ex)
             {
-                
+
+                LogHelper.LogError(ex);
                 eventLog1.WriteEntry("An error occured while sending email" + " " + ex.ToString());
 
             }
@@ -105,7 +106,7 @@ namespace WSftp
             catch(Exception ex)
             {
                 eventLog1.WriteEntry("An error occured while processing scheduler event" + " " + ex.ToString());
-                errorMSG = ex.Message;
+                LogHelper.LogError(ex);
                 SendEmailToMe(true);
             }
            

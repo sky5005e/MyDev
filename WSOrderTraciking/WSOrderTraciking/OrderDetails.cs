@@ -224,7 +224,7 @@ namespace WSOrderTraciking
             }
             catch (Exception ex)
             {
-                CommonCls.ErrorMessage(ex, CommonCls.rootDir + "ErrorLog_" + DateTime.Now.Ticks + ".txt");
+                LogHelper.LogError(ex);
             }
 
             return objOrder;

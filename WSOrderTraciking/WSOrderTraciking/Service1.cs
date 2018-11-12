@@ -88,14 +88,13 @@ namespace WSOrderTraciking
                 if (isMailSent)
                     eventLog1.WriteEntry("Email is sent successfully");
                 else
-                    eventLog1.WriteEntry("An errored occur while sending email");
+                    eventLog1.WriteEntry("An errored occur while sending email : " + errorMSG);
             }
             catch (Exception ex)
             {
 
                 eventLog1.WriteEntry("An error occured while sending email" + " " + ex.ToString());
-
-                //System.IO.File.WriteAllText(MainDir + "Error" + DateTime.Now.Ticks + ".txt", "Error on email  Service" + ex.Message);
+                LogHelper.LogError(ex);
             }
 
         }
@@ -130,8 +129,7 @@ namespace WSOrderTraciking
             {
 
                 eventLog1.WriteEntry("An error occured while sending email" + " " + ex.ToString());
-
-                //System.IO.File.WriteAllText(MainDir + "Error" + DateTime.Now.Ticks + ".txt", "Error on email  Service" + ex.Message);
+                LogHelper.LogError(ex);
             }
 
         }
@@ -162,8 +160,7 @@ namespace WSOrderTraciking
             {
 
                 eventLog1.WriteEntry("An error occured while sending email" + " " + ex.ToString());
-
-                //System.IO.File.WriteAllText(MainDir + "Error" + DateTime.Now.Ticks + ".txt", "Error on email  Service" + ex.Message);
+                LogHelper.LogError(ex);
             }
 
         }
@@ -260,7 +257,7 @@ namespace WSOrderTraciking
             }
             catch (Exception ex)
             {
-                CommonCls.ErrorMessage(ex, MainDir() + "Errorfile" + DateTime.Now.Ticks + ".txt");
+                LogHelper.LogError(ex);
             }
 
 
@@ -320,7 +317,7 @@ namespace WSOrderTraciking
             }
             catch (Exception ex)
             {
-                System.IO.File.WriteAllText(MainDir() + "Error" + DateTime.Now.Ticks + ".txt", ex.Message);
+                LogHelper.LogError(ex);
                 EventLog.WriteEntry(ex.Message, EventLogEntryType.Error);
             }
         }

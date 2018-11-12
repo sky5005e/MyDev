@@ -5,6 +5,7 @@ using System.Web;
 using System.Net.Mail;
 using System.Net;
 using System.IO;
+using WSOrderTraciking;
 
 /// <summary>
 /// Summary description for CommonMail
@@ -72,8 +73,7 @@ public class CommonMail
         }
         catch (Exception ex)
         {
-            ex = null;
-
+            LogHelper.LogError(ex);
             Result = false;
         }
 
@@ -157,9 +157,7 @@ public class CommonMail
         }
         catch (Exception ex)
         {
-
-            ex = null;
-
+            LogHelper.LogError(ex);
             Result = false;
         }
 
@@ -285,8 +283,7 @@ public class CommonMail
         }
         catch (Exception ex)
         {
-            ex = null;
-
+            LogHelper.LogError(ex);
             Result = false;
         }
 

@@ -12,3 +12,9 @@ D:\Windows_Backup\ProFinal\WSOrderTraciking\WSOrderTraciking\obj\x86\Release\WSO
 D:\Windows_Backup\ProFinal\WSOrderTraciking\WSOrderTraciking\obj\x86\Release\WSOrderTraciking.pdb
 C:\Users\g521753\Desktop\Hardidsk\MyDev\WSOrderTraciking\WSOrderTraciking\obj\x86\Release\WSOrderTraciking.exe
 C:\Users\g521753\Desktop\Hardidsk\MyDev\WSOrderTraciking\WSOrderTraciking\obj\x86\Release\WSOrderTraciking.pdb
+C:\Users\g521753\Desktop\Hardidsk\MyDev\WSOrderTraciking\WSOrderTraciking\bin\Release\WSOrderTraciking.exe.config
+C:\Users\g521753\Desktop\Hardidsk\MyDev\WSOrderTraciking\WSOrderTraciking\bin\Release\WSOrderTraciking.exe
+C:\Users\g521753\Desktop\Hardidsk\MyDev\WSOrderTraciking\WSOrderTraciking\bin\Release\WSOrderTraciking.pdb
+C:\Users\g521753\Desktop\Hardidsk\MyDev\WSOrderTraciking\WSOrderTraciking\obj\x86\Release\WSOrderTraciking.ProjectInstaller.resources
+C:\Users\g521753\Desktop\Hardidsk\MyDev\WSOrderTraciking\WSOrderTraciking\obj\x86\Release\WSOrderTraciking.Service1.resources
+C:\Users\g521753\Desktop\Hardidsk\MyDev\WSOrderTraciking\WSOrderTraciking\obj\x86\Release\WSOrderTraciking.csproj.GenerateResource.Cache
