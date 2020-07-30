@@ -60,7 +60,7 @@
     "ionic-angular": "3.9.2",
     "ionic-native": "^2.9.0",
     "ionicons": "^4.6.3",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "ng-circle-progress": "^1.5.1",
     "rxjs": "^6.5.4",
     "rxjs-compat": "^6.5.4",
