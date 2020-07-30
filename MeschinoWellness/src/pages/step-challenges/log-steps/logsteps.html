@@ -1,0 +1,74 @@
+<ion-header>
+    <ion-navbar #navbar color="primary">
+        <ion-title>Log Steps / Activities</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <div class="custom-row align-items-center mt-3 mb-3">
+        <div class="custom-col pl-3">
+            <div class="font-family-Conv_gotham-book-webfont font-size-20 font-weight-800">
+                <button (click)="SetDate('Today', 'Previous')" class="btn-pre">&#8249;</button>
+                <span (click)="SetDate('Today', '')"> TODAY </span>
+                <button (click)="SetDate('Today', 'Next')" class="btn-next">&#8250;</button>
+            </div>
+            <small class="text-light">{{CurrentDate}}</small>
+        </div>
+        <div class="custom-col-auto mr-3">
+            <!-- <div class="custom-btn-primary rounded-circle d-flex align-items-center justify-content-center"
+                style="width: 30px; height: 30px;">
+                <img class="pb-2 pt-2 pl-2 pr-2" src="assets/img/calendar.png" alt="calendar" style="width:34px;">
+            </div> -->
+        </div>
+    </div>
+    <div class="app-cart ml-3 mr-3 mb-3">
+        <div class="titli-1">Log Steps</div>
+        <div class="custom-row">
+            <div class="custom-col">
+                <input placeholder="Enter number of steps to log" type="text" class="form-control"
+                    [(ngModel)]="account.LogStepsNumber">
+            </div>
+        </div>
+        <button type="button" class="custom-btn custom-btn-primary w-100 font-weight-bold font-size-17 py-2 px-2"
+            (click)="AddLogs()">
+            <img class="align-middle img-fluid pr-2" src="assets/img/log-steps.png" style="width:37px;"
+                alt="log-steps">ADD</button>
+    </div>
+    <div class="text-center primary-color mb-3 font-family-Conv_Gotham-Medium font-size-20">OR</div>
+    <div class="app-cart ml-3 mr-3 mb-3">
+        <div class="titli-1">Log Other Activities</div>
+        <div class="custom-row">
+            <div class="custom-col">
+                <!-- <ion-searchbar #searchbar placeholder="Search activity by name"
+               class="form-control"></ion-searchbar> -->
+
+                <input placeholder="Search activity by name" readonly type="text" class="form-control"
+                    (focus)="showActivitiesPicker()" [(ngModel)]="account.Activities"> 
+            </div>
+        </div>
+        <button type="button" class="custom-btn custom-btn-primary w-100 font-weight-bold font-size-17 py-2 px-2"
+            (click)="AddlogsModal();">
+            ADD</button>
+    </div>
+    <div class="app-cart ml-3 mr-3 mb-4">
+        <div class="titli-1">Logged Steps / Activities</div>
+        <div class="custom-row" *ngFor="let item of LogsStepActivities">
+            <div class="custom-col">
+                <span>{{item.exercise_name}}</span>
+                <div class="small font-family-Conv_Gotham-Medium">{{item.steps_count}}</div>
+            </div>
+            <div class="custom-col-auto" (click)="DeleteLoggedStepsActivities(item.step_tracking_num)">
+                <img style="width: 20px;" class="img-fluid" src="assets/img/remove.png" alt="remove">
+            </div>
+        </div>
+
+        <div class="mt-4 pb-2 text-center">
+            <div class="primary-color font-family-Conv_Gotham-Medium font-size-25">{{TotalSteps}}</div>
+            <div class="font-family-Conv_gotham-book-webfont font-size-17">Total Steps</div>
+        </div>
+    </div>
+    <div class="ml-3 mr-3 mb-3">
+        <button (click)="NextScreen('StepChallengeHistoryPage')" type="button"
+            class="custom-btn text-uppercase custom-btn-primary w-100 font-weight-bold font-size-17 py-2 px-2">
+            My Challenges</button>
+    </div>
+</ion-content>

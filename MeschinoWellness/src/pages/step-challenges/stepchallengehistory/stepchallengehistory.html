@@ -1,0 +1,46 @@
+<ion-header>
+    <ion-navbar #navbar color="primary">
+        <ion-title>Step Challenge History</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content lass="app-back">
+    <div class="app-cart ml-3 mt-3 mr-3 px-0" *ngFor="let item of dataActivities">
+        <div class="custom-row py-2 px-2 text-center text-light">
+            <div class="custom-col">
+                <div class="font-family-Conv_gotham-book-webfont font-size-13 main-head">
+                    <div class="fl-left">Duration {{item.duration}}</div>
+                    <div class="fl-right text-blue"
+                        (click)="StepChallengeHistoryAction(item.user_step_challenge_num,item.buttonTitle)"><img
+                            style="width: 17px;padding-right: 2px; vertical-align: middle;" class="img-fluid"
+                            src="assets/img/new_{{item.buttonTitle}}.png" alt="{{item.buttonTitle}}">{{item.buttonTitle}}</div>
+                </div>
+                <br />
+                <div class="text-left text-light clr"><small> {{item.start_date}} - {{item.end_date}}</small></div>
+            </div>
+        </div>
+        <div style="border-bottom: 1px !important;" class="border-bottom"></div>
+        <div class="custom-row px-2 text-center text-light">
+            <div class="custom-col">
+                <div class="font-family-Conv_gotham-book-webfont font-size-13">Goal Steps</div>
+            </div>
+            <div class="custom-col">
+                <div class="font-family-Conv_gotham-book-webfont font-size-13">Total Steps</div>
+            </div>
+            <div class="custom-col">
+                <div class="font-family-Conv_gotham-book-webfont font-size-13">Status</div>
+            </div>
+        </div>
+
+        <div class="custom-row px-2 text-center">
+            <div class="custom-col custom-mr-10">
+                <div class="font-family-Conv_gotham-book-webfont font-size-13">{{item.number_of_steps}}</div>
+            </div>
+            <div class="custom-col custom-mr-10">
+                <div class="font-family-Conv_gotham-book-webfont font-size-13">{{item.total_steps}}</div>
+            </div>
+            <div class="custom-col custom-mr-10">
+                <div class="{{item.classname}} border-radius-4 font-family-Conv_gotham-book-webfont  font-size-13 px-3 text-white">{{item.status}}</div>
+            </div>
+        </div>
+    </div>
+</ion-content>

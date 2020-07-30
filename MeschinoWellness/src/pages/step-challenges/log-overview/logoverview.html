@@ -1,0 +1,71 @@
+<ion-header>
+    <ion-navbar #navbar color="primary">
+        <ion-title>Overview</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+
+    <ul class="tabs-wrap-main">
+        <li class="tab-link {{DialyClass}} main-li" data-tab="custom-tab-1">
+            <button (click)="LoadGraph('Daily', 'Previous')" class="btn-pre">&#8249;</button>
+            <a (click)="LoadGraph('Daily', '')" class="btn-link"> Daily </a>
+            <button (click)="LoadGraph('Daily', 'Next')" class="btn-next">&#8250;</button>
+        </li>
+        <li class="tab-link {{WeeklyClass}} main-li" data-tab="custom-tab-2">
+            <button (click)="LoadGraph('Weekly', 'Previous')" class="btn-pre">&#8249;</button>
+            <a (click)="LoadGraph('Weekly', '')" class="btn-link"> Weekly </a>
+            <button (click)="LoadGraph('Weekly', 'Next')" class="btn-next">&#8250;</button>
+        </li>
+        <li class="tab-link {{MonthlyClass}} main-li" data-tab="custom-tab-3">
+            <button (click)="LoadGraph('Monthly', 'Previous')" class="btn-pre">&#8249;</button>
+            <a (click)="LoadGraph('Monthly', '')" class="btn-link"> Monthly </a>
+            <button (click)="LoadGraph('Monthly', 'Next')" class="btn-next">&#8250;</button>
+        </li>
+    </ul>
+    <div id="custom-tab-1" class="tab-content-main current">
+        <div class="custom-div custom-row px-2 text-center ">
+            <div class="custom-col">
+                <div class="div-pad-10">{{model.TotalSteps}}
+                    <br />
+                    Total Steps</div>
+            </div>
+            <div class="custom-col">
+                <div class="div-pad-10 border-lr"> {{model.Highest}}
+                    <br />
+                    Highest</div>
+            </div>
+            <div class="custom-col">
+                <div class="div-pad-10 ">{{model.Lowest}}
+                    <br />
+                    Lowest</div>
+            </div>
+            
+        </div>
+
+        <!-- <div class="custom-row align-items-center mt-3 mb-3">
+            <div class="custom-col pl-3">
+                <small class="text-blue"> <b>210</b> Today steps</small>
+            </div>
+            <div class="custom-col-auto mr-3">
+                <div class="custom-btn-primary rounded-circle d-flex align-items-center justify-content-center"
+                    style="width: 30px; height: 30px;">
+                    <img class="pb-2 pt-2 pl-2 pr-2" src="assets/img/calendar.png" alt="calendar" style="width:34px;">
+                </div>
+            </div>
+        </div> -->
+        <div id="container" name="container" style="display: block;"></div>
+        <div class="mb-3">
+            <button type="button" (click)="NextScreen('StepChallengeHistoryPage')"
+                class="custom-btn text-uppercase custom-btn-primary w-100 font-weight-bold font-size-17 py-2 px-2">
+                My Challenges</button>
+        </div>
+    </div>
+    <div id="custom-tab-2" class="tab-content-main">
+        2
+    </div>
+    <div id="custom-tab-3" class="tab-content-main">
+        3
+    </div>
+
+
+</ion-content>

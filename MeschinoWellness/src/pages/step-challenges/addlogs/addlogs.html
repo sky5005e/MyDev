@@ -1,0 +1,28 @@
+<ion-content no-bounce>
+    <ion-item>
+        <ion-label>Intensity</ion-label>
+        <ion-select class="combo-large" [(ngModel)]="model.intensity" okText="Okay" cancelText="Dismiss">
+            <ion-option *ngFor="let item of listItems" value="{{item.Text}}">{{item.Text}}</ion-option>
+        </ion-select>
+    </ion-item>
+    <!-- <ion-item>
+        <ion-label>Minutes</ion-label>
+        <input placeholder="Enter duration" type="text" [(ngModel)]="model.exduration">
+    </ion-item> -->
+    <ion-item>
+        <ion-label color="light-grey">
+            <ion-icon item-left name="time"></ion-icon>Minutes
+        </ion-label>
+        <ion-input type="text" [(ngModel)]="model.exduration" class="input-brdr"></ion-input>
+    </ion-item>
+    <ion-grid>
+        <ion-row>
+            <ion-col width-50>
+                <button ion-button block outline (click)="onSave()">SAVE</button>
+            </ion-col>
+            <ion-col width-50>
+                <button ion-button block outline (click)="closedPopup();">CANCEL</button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>
