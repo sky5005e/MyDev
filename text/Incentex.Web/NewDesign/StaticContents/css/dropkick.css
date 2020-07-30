@@ -1,0 +1,398 @@
+/* One container to bind them... */
+.dk_container { font-weight: normal; line-height: 14px; font-family: 'AvenirLTStd-Medium'; font-size:18px;}
+.dk_toggle{background:url(../img/dk_arrows.gif) no-repeat right center;  border: 1px solid #e4e4e4; color: #333; padding: 0 36px 0 10px; height:48px; line-height:48px; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px;}
+.dk_label{}
+.dk_toggle:hover {text-decoration:none;}
+.dk_focus .dk_toggle {border: 1px solid #737373;}
+.dk_open {z-index: 10;}
+.dk_open .dk_toggle {border: 1px solid #737373; color: #333; }
+.dk_options{}
+.dk_options a{background: #fff; border-top: 1px solid #999; font-weight: normal; padding: 8px 10px;}
+.dk_options li:first-child a{border-top:0px !important;}
+.dk_options a:hover, .dk_option_current a{background: #fff; color: #323232; text-decoration: none;}
+.dk_error {z-index: 10;}
+.dk_error .dk_toggle {border: 1px solid #ff0000; color: #333; }
+
+/***** Critical to the continued enjoyment of working dropdowns ******/
+.dk_container { display: none;  position: relative; }
+.dk_toggle {display: block; position: relative; zoom: 1;}
+.dk_open { position: relative; }
+.dk_open .dk_options { display: block; }
+.dk_options { display: none; margin-top: -1px; position: absolute; right: 0; width: 100%; overflow-y:scroll; overflow-x:hidden; height:250px;}
+.dk_options a, .dk_options a:link, .dk_options a:visited{display: block;}
+.dk_options_inner{border: 1px solid #8c8c8e; color: #333; overflow: hidden; position: relative;}
+.dk_options_inner li{float:left; width:100%;}
+.dk_options_inner li a{display:block;}
+.dk_options_inner li.hover a{background: #0084c7; color: #fff; text-decoration: none;}
+.dk_touch .dk_options{overflow: hidden;}
+.dk_touch .dk_options_inner{max-height: none; overflow: visible;}
+.dk_fouc select{position: relative; top: -99999em; visibility: hidden;}
+
+/***** End Critical to the continued enjoyment of working dropdowns ******/
+.drpbox{padding:0 10px;}
+.label_check, .label_radio{ display:inline-block; cursor: pointer; line-height: 20px; padding-bottom:0px;}
+.radios{}
+.label_check input, .label_radio input  { margin-right: 5px; }
+
+.has-js .label_check,
+.has-js .label_radio{ padding-left: 29px; position:relative;}
+.has-js .label_radio{ background: url(../img/radio-off.png) no-repeat; }
+.has-js .label_check{ background: url(../img/check-off.png) no-repeat; }
+.has-js label.c_on{ background: url(../img/check-on.png) no-repeat; }
+.has-js label.r_on{ background: url(../img/radio-on.png) no-repeat; }
+.has-js .label_check input,
+.has-js .label_radio input  { position:absolute; left:4px; top:0px; opacity:0;}
+
+.label_check{ font-size:14px;  font-family: 'AvenirLTStd-Black'; line-height:22px; color:#929292;}
+.label_radio{font-size:14px;  font-family: 'AvenirLTStd-Black'; line-height:22px; color:#929292;}
+.apple_check .drpbox{padding:0 10px;}
+.apple_check .label_check, .apple_check .label_radio{ display:inline-block; cursor: pointer; line-height:27px; padding-bottom:0px;}
+.apple_check .label_check input, .apple_check .label_radio input  { margin-right:0px; }
+
+.has-js .apple_check .label_check, .apple_check .has-js .label_radio    { padding-left: 29px; width:39px; display:inline-block;}
+.has-js .apple_check .label_radio{ background: url(../img/check-off-apple.png) no-repeat;}
+.has-js .apple_check .label_check{ background: url(../img/check-off-apple.png) no-repeat; }
+.has-js .apple_check label.c_on{ background: url(../img/check-on-apple.png) no-repeat; }
+.has-js .apple_check label.r_on      { background: url(../img/radio-on.png) no-repeat; }
+.has-js .apple_check .label_check input,
+.has-js .apple_check .label_radio input  { position: absolute; left: -9999px; }
+
+.apple_check .label_check{ font-size:14px;  font-family: 'AvenirLTStd-Black'; line-height:27px; color:#929292;}
+
+.row-link .label_check input, .row-link .label_radio input{ margin-right:0px;}
+.has-js .row-link .label_check{ background:url(../img/check-off-notify.png) no-repeat 0px 0px;}
+.has-js .row-link .label_check.c_on{ background:url(../img/check-on-notify.png) no-repeat 0px 0px;}
+.has-js .row-link .label_check, .has-js .row-link .label_radio{ padding-left:20px; float:left;}
+
+/* Custom select box width  */
+.medium-drop .dk_toggle{width:232px !important;}
+.small-drop .dk_toggle{ width:30px !important;}
+.small-drop { float:left; width:78px;}
+
+.month-drop .dk_toggle{ width:35px !important;}
+.month-drop { float:left; width:83px;}
+
+.day-drop .dk_toggle{ width:35px !important;}
+.day-drop { float:left; width:83px; margin-left:10px;}
+
+.year-drop .dk_toggle{ width:46px !important;}
+.year-drop { float:left; width:94px; margin-left:10px;}
+
+.source-drop { float:left; width:245px; margin-right:3px; margin-top:3px; margin-bottom:3px;}
+.source-drop div.selector{width:235px !important;}
+.source-drop div.selector span{width:210px !important;}
+.source-drop div.selector select{left:-4px; top:0; width:200px;}
+.source-drop .dk_toggle{ width:197px !important; }
+
+.cmn-drop div.selector{width:235px !important;}
+.cmn-drop div.selector span{width:210px !important;}
+.cmn-drop div.selector select{left: -4px; top: 0; width: 244px;}
+.cmn-drop div.selector.ErrorField{width:227px !important; height:42px; line-height:42px; background:url(../img/custorm-drop-bg.png) no-repeat right top;}
+.cmn-drop div.selector.ErrorField span{width:202px !important; height:42px; line-height:42px;}
+div.selector.ErrorField select{top:0;}
+
+.state-drop { float:left; width:75px; margin:3px;}
+.state-drop .dk_toggle{ width:27px !important; }
+
+/*.account-form-block .dk_toggle{ color:#929292;}*/
+.half-drop { float:left; width:245px; margin:3px;}
+.half-drop .dk_toggle{ width:197px !important; }
+
+.cart-drop { float:left; width:68px;}
+.cart-drop .dk_toggle{ width:27px !important; }
+
+.message-num{float:right; width:162px; margin-right:0px; margin-top:10px; margin-bottom:3px;}
+.message-num .dk_toggle{ width:128px !important; padding:0 25px 0 7px; background-position:right center; height:26px; line-height:26px; font-size:14px;}
+.message-num .dk_options a{ padding:7px 5px; font-size:14px;}
+
+.data-num{float:left; width:449px; margin-right:0px;}
+.data-num .dk_toggle{ width:415px !important; padding:0 25px 0 7px; background-position:right center; height:26px; line-height:26px; font-size:14px;}
+.data-num .dk_options a{ padding:7px 5px; font-size:14px;}
+
+.data-num1{float:left; width:239px; margin-right:0px;}
+.data-num1 .dk_toggle{ width:205px !important; padding:0 25px 0 7px; background-position:right center; height:26px; line-height:26px; font-size:14px;}
+.data-num1 .dk_options a{ padding:7px 5px; font-size:14px;}
+
+.cart-dropin{float:left; width:68px; margin-right:0px;}
+.cart-dropin .dk_toggle{ width:34px !important; padding:0 25px 0 7px; background-position:right center; height:26px; line-height:26px; font-size:14px; border:#e4e4e4 solid 1px; color:#929292;}
+.cart-dropin .dk_options a{ padding:7px 5px; font-size:14px; border-top:#e4e4e4 solid 1px;}
+.cart-dropin .dk_options_inner{border:#e4e4e4 solid 1px;}
+.cart-dropin .dk_options{ width:140px; right:inherit; left:0px;}
+.cart-dropin .dk_options a:hover,.cart-dropin .dk_option_current a{ color:#929292;}
+
+.cart-pop{float:left; width:68px; margin-right:0px; margin-top:10px;}
+.cart-pop div.selector{width:34px !important; padding:0 25px 0 7px; background:none; height:26px; line-height:26px; font-size:14px; border:#e4e4e4 solid 1px; color:#929292;}
+.cart-pop div.selector span{}
+.cart-pop .dk_options a{padding:7px 5px; font-size:14px; border-top:#e4e4e4 solid 1px;}
+.cart-pop .dk_options_inner{border:#e4e4e4 solid 1px;}
+.cart-pop .dk_options{width:140px; right:inherit; left:0px;}
+.cart-pop .dk_options a:hover,.cart-pop .dk_option_current a{ color:#929292;}
+
+.cart-piece{float:left; width:88px; margin-right:0px; margin-top:10px;}
+.cart-piece .dk_toggle{ width:54px !important; padding:0 25px 0 7px; background-position:right center; height:26px; line-height:26px; font-size:14px; border:#e4e4e4 solid 1px; color:#929292;}
+.cart-piece .dk_options a{ padding:7px 5px; font-size:14px; border-top:#e4e4e4 solid 1px;}
+.cart-piece .dk_options_inner{border:#e4e4e4 solid 1px;}
+.cart-piece .dk_options{ width:140px; right:inherit; left:0px;}
+.cart-piece .dk_options a:hover,.cart-piece .dk_option_current a{ color:#929292;}
+
+.filter-drop{float:left; width:240px; margin:3px 0 0 5px; background:#fff;}
+.filter-drop .dk_toggle{ width:192px !important; border:#e4e4e4 solid 1px; color:#929292;}
+.filter-drop .dk_options_inner{ border:#e4e4e4 solid 1px; background:#fff;}
+.filter-drop .dk_options a{ border-top:#e4e4e4 solid 1px;}
+.filter-drop .dk_options a:hover, .filter-drop .dk_option_current a{ color:#929292;}
+.filter-drop .dk_focus .dk_toggle {border: 1px solid #8BC1F6;}
+.filter-drop .dk_open .dk_toggle {border: 1px solid #8BC1F6;}
+.filter-drop .dk_open .dk_options a{border-top: 1px solid #8BC1F6;}
+.filter-drop .dk_open .dk_options_inner{border: 1px solid #8BC1F6;}
+
+.select-all{float:left; width:114px; margin:0px 3px 0 32px; background:#fff;}
+.select-all .dk_toggle{ width:80px !important; padding:0 25px 0 7px; background-position:right center; height:26px; line-height:26px; font-size:14px; border:#e4e4e4 solid 1px; color:#929292;}
+.select-all .dk_options_inner{ border:#e4e4e4 solid 1px; background:#fff;}
+.select-all .dk_options a{ border-top:#e4e4e4 solid 1px; font-size:13px;}
+.select-all .dk_options a:hover, .filter-drop .dk_option_current a{ color:#929292;}
+.select-all .dk_focus .dk_toggle {border: 1px solid #8BC1F6;}
+.select-all .dk_open .dk_toggle {border: 1px solid #8BC1F6;}
+.select-all .dk_open .dk_options a{border-top: 1px solid #8BC1F6;}
+.select-all .dk_open .dk_options_inner{border: 1px solid #8BC1F6;}
+
+.loginas-drop{float:left; width:314px; margin:0px 0 8px 3px; background:#fff;}
+.loginas-drop .dk_toggle{ width:266px !important; border:#e4e4e4 solid 1px; color:#929292;}
+.loginas-drop .dk_options_inner{ border:#e4e4e4 solid 1px; background:#fff;}
+.loginas-drop .dk_options a{ border-top:#e4e4e4 solid 1px;}
+.loginas-drop .dk_options a:hover, .filter-drop .dk_option_current a{ color:#929292;}
+.loginas-drop .dk_focus .dk_toggle {border: 1px solid #8BC1F6;}
+.loginas-drop .dk_open .dk_toggle {border: 1px solid #8BC1F6;}
+.loginas-drop .dk_open .dk_options a{border-top: 1px solid #8BC1F6;}
+.loginas-drop .dk_open .dk_options_inner{border: 1px solid #8BC1F6;}
+
+.basic-drop{float:left; width:360px; margin:3px 3px 0 3px; background:#fff;}
+.basic-drop .dk_toggle{ width:312px !important; border:#e4e4e4 solid 1px; color:#929292;}
+.basic-drop .dk_options_inner{ border:#e4e4e4 solid 1px; background:#fff;}
+.basic-drop .dk_options a{ border-top:#e4e4e4 solid 1px;}
+.basic-drop .dk_options a:hover, .filter-drop .dk_option_current a{ color:#929292;}
+.basic-drop .dk_focus .dk_toggle {border: 1px solid #8BC1F6;}
+.basic-drop .dk_open .dk_toggle {border: 1px solid #8BC1F6;}
+.basic-drop .dk_open .dk_options a{border-top: 1px solid #8BC1F6;}
+.basic-drop .dk_open .dk_options_inner{border: 1px solid #8BC1F6;}
+
+/* General settings */
+div.selector, div.selector span{ background:url(../img/custorm-drop-bg.png) no-repeat right top; -webkit-font-smoothing: antialiased; }
+.selector-close div.selector span, .selector-close div.selector.hover span{ background:url(../img/custorm-drop-close.png) no-repeat right top;}
+.selector-close div.selector.focus span, .selector-close div.selector.hover.focus.active span{ background:url(../img/custorm-drop-close.png) no-repeat right -4px;}
+div.selector{ display: -moz-inline-box; display: inline-block;  *display: inline; zoom: 1; vertical-align: middle;/* Keeping this as :focus to remove browser styles */ }
+div.selector:focus{ outline:0; }
+div.selector, div.selector *{ margin:0; padding:0; }
+
+/* Select */
+div.selector { background:url(../img/custorm-drop-bg.png) no-repeat left bottom;  line-height: 50px; height: 50px; padding: 0 0 0 10px; position: relative; overflow: hidden; }
+div.selector span { text-overflow: ellipsis; display: block; overflow: hidden; white-space: nowrap; background-position: right 0; height: 50px; line-height: 50px; padding-right: 25px; cursor: pointer; width: 100%; display: block; }
+div.selector.fixedWidth { width: 190px; }
+div.selector.fixedWidth span { width: 155px; }
+div.selector select { opacity: 0; filter: alpha(opacity=0); -moz-opacity: 0; border: none; background: none; position: absolute; height:42px; line-height:42px; top: 4px; left: 0px; width: 100%; }
+div.selector.active { background:url(../img/custorm-drop-bg.png) no-repeat left bottom;  }
+div.selector.active span { background:url(../img/custorm-drop-bg.png) no-repeat right top; }
+div.selector.hover{background:url(../img/custorm-drop-bg.png) no-repeat left bottom; }
+div.selector.hover span{background:url(../img/custorm-drop-bg.png) no-repeat right top; }
+
+.ErrorField { border: 4px solid #FF0000; padding: 10px 8px 6px; }
+.selector.ErrorField { border: 4px solid red; padding:0px; height:42px; line-height:42px; width:272px; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px;}
+.selector.ErrorField div.selector span{ padding-left:6px;}
+.register-block .selector.ErrorField{width:272px !important;}
+
+/*#add-Employee-Block .ErrorField{padding:11px 8px 7px; width:256px !important;}*/
+#add-Employee-Bloc .selector.ErrorField{padding: 0 0 0 6px;  width: 266px !important;}
+div.selector.focus { background:url(../img/custorm-drop-bg.png) no-repeat left bottom; border:4px solid #8BC1F6; height: 42px; line-height:42px; width: 231px; padding:0 0 0 6px;
+-webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px;}
+div.selector.focus span {  background:url(../img/custorm-drop-bg.png) no-repeat right -4px; height: 42px; line-height:42px; width: 210px;}
+div.selector.focus select{top:0;}
+div.selector.hover.active, div.selector.focus.active { background:url(../img/custorm-drop-bg.png) no-repeat left bottom; }
+div.selector.hover.active span, div.selector.focus.active span {  background:url(../img/custorm-drop-bg.png) no-repeat right -4px;  }
+div.selector.disabled, div.selector.disabled.active { background:url(../img/custorm-drop-bg.png) no-repeat left bottom;}
+div.selector.disabled span, div.selector.disabled.active span { background:url(../img/custorm-drop-bg.png) no-repeat right top;  }
+
+/* Select */
+div.selector { font-weight: bold; color: #000; font-size: 14px; }
+div.selector span { color: #666; text-shadow: 0 1px 0 white; font-weight: normal;  font-family: 'AvenirLTStd-Medium'; font-size:18px; }
+div.selector select { }
+div.selector.disabled span, div.selector.disabled.active span { color: #bbb; }
+
+/* General settings */
+.small-drop div.selector, .small-drop div.selector span{ background:url(../img/custorm-drop-bg-in.png) no-repeat right top; -webkit-font-smoothing: antialiased; }
+.small-drop div.selector{ display: -moz-inline-box; display: inline-block;  *display: inline; zoom: 1; vertical-align: middle;/* Keeping this as :focus to remove browser styles */ }
+.small-drop div.selector:focus{ outline: 0; }
+.small-drop div.selector, div.selector *{ margin: 0; padding: 0; }
+
+/* Select */
+.small-drop div.selector { background:url(../img/custorm-drop-bg-in.png) no-repeat left bottom;  line-height:28px; height:28px; padding: 0 0 0 8px; position: relative; overflow: hidden; }
+.small-drop div.selector span { text-overflow: ellipsis; display: block; overflow: hidden; white-space: nowrap; background-position: right 0; height: 28px; line-height: 28px; padding-right: 18px; cursor: pointer; width: 100%; display: block; }
+.small-drop div.selector.fixedWidth { width: 190px; }
+.small-drop div.selector.fixedWidth span { width: 155px; }
+.small-drop div.selector select { opacity: 0; filter: alpha(opacity=0); -moz-opacity: 0; border: none; background: none; position: absolute; height:24px; top: 4px; left: 0px; width: 100%; }
+.small-drop div.selector.active { background:url(../img/custorm-drop-bg-in.png) no-repeat left bottom;  }
+.small-drop div.selector.active span { background:url(../img/custorm-drop-bg-in.png) no-repeat right top;  }
+.small-drop div.selector.hover,.small-drop div.selector.focus { background:url(../img/custorm-drop-bg-in.png) no-repeat left bottom; }
+.small-drop div.selector.hover span,.small-drop div.selector.focus span {  background:url(../img/custorm-drop-bg-in.png) no-repeat right top;  }
+.small-drop div.selector.hover.active,.small-drop  div.selector.focus.active { background:url(../img/custorm-drop-bg-in.png) no-repeat left bottom; }
+.small-drop div.selector.hover.active span,.small-drop  div.selector.focus.active span {  background:url(../img/custorm-drop-bg-in.png) no-repeat right top;  }
+.small-drop div.selector.disabled,.small-drop  div.selector.disabled.active { background:url(../img/custorm-drop-bg-in.png) no-repeat left bottom;}
+.small-drop div.selector.disabled span,.small-drop  div.selector.disabled.active span { background:url(../img/custorm-drop-bg-in.png) no-repeat right top;  }
+.small-drop div.selector { font-weight: bold; color: #000; font-size: 14px; }
+.small-drop div.selector span { color: #929292; text-shadow: 0 1px 0 white; font-weight: normal;  font-family: 'AvenirLTStd-Black';  font-size:14px; text-transform:uppercase;}
+.small-drop div.selector select { }
+.small-drop div.selector.disabled span,.small-drop div.selector.disabled.active span { color: #bbb; }
+
+.custom-drop1{ width:100px; }
+.custom-drop1 select{ width:65px;}
+
+.medium-drop div.selector{ width:280px;}
+.medium-drop select{ width:245px;}
+.medium-drop div.selector select{ width:276px; left:-3px;}
+.medium-drop div.selector.focus{ width:266px !important; padding:0 0 0 6px;}
+.medium-drop div.selector.focus span{ width:245px !important;}
+.medium-drop div.selector.focus select{top:0;}
+
+.medium-drop2{ float:left; width:253px;}
+.medium-drop2 div.selector{ width:253px;}
+.medium-drop2 select{ width:218px;}
+.medium-drop2 div.selector select{ width:249px; left:-3px;}
+.medium-drop2 div.selector.focus{ width:239px !important; padding:0 0 0 6px;}
+.medium-drop2 div.selector.focus span{ width:218px !important;}
+.medium-drop2 div.selector.focus select{top:0;}
+.check-select {float:left; width:278px}
+.check-select label { margin-top:15px;}
+
+.mediumLarge-drop{ margin-right:3px;}
+.mediumLarge-drop div.selector{ width:361px;}
+.mediumLarge-drop select{ width:326px;}
+.mediumLarge-drop div.selector.focus{ width:347px !important; padding:0 0 0 6px;}
+.mediumLarge-drop div.selector.focus span{ width:322px !important;}
+.mediumLarge-drop div.selector.focus select{top:0;}
+
+.small-drop div.selector{ width:69px;}
+.small-drop select{ width:41px;}
+
+.selectsmall div.selector{ width:52px !important;}
+.selectsmall div.selector span{ width:27px !important;}
+.selectsmall div.selector select{ width:62px; left:-4px;}
+.selectsmall div.selector.focus{ width:48px !important; padding:0 0 0 6px;}
+.selectsmall div.selector.focus span{ width:27px !important;}
+.selectsmall div.selector.focus select{top:0;}
+
+.selectlarge div.selector{ width:600px !important;}
+.selectlarge div.selector span{ width:574px !important;}
+.selectlarge div.selector select{}
+.selectlarge div.selector.focus{ width:596px !important; padding:0 0 0 6px;}
+.selectlarge div.selector.focus span{ width:574px !important;}
+.selectlarge div.selector.focus select{top:0;}
+
+.country-drop{float:left; width:609px; margin:3px;}
+.country-drop .dk_toggle{ width:561px !important; }
+.country-drop div.selector{width:600px !important;}
+.country-drop div.selector span{width:574px !important;}
+.country-drop div.selector.focus{ width:596px !important; padding:0 0 0 6px;}
+.country-drop div.selector.focus span{ width:574px !important;}
+.country-drop div.selector.focus select{left: -4px; top: 0; width: 610px;}
+
+.warranty-mid-drop div.selector{ width:268px !important; margin-left:3px;}
+.warranty-mid-drop div.selector span{width:243px !important}
+.warranty-mid-drop div.selector select{ width:276px; left:-3px;}
+.warranty-mid-drop div.selector.focus{ width:264px !important; padding:0 0 0 6px;}
+.warranty-mid-drop div.selector.focus span{ width:243px !important;}
+.warranty-mid-drop div.selector.focus select{top:0;}
+
+.exp-drop div.selector{ width:150px !important;}
+.exp-drop div.selector span{width:125px !important}
+.exp-drop div.selector select{ width:159px; left:-4px;}
+.exp-drop div.selector.focus{ width:146px !important; padding:0 0 0 6px;}
+.exp-drop div.selector.focus span{ width:125px !important;}
+.exp-drop div.selector.focus select{top:0;}
+
+.month1-drop div.selector{ width:78px;}
+.month1-drop select{ width:43px;}
+.day1-drop{ margin-left:10px;}
+.day1-drop div.selector{ width:78px;}
+.day1-drop select{ width:43px;}
+.year1-drop{ margin-left:9px;}
+.year1-drop div.selector{ width:105px;}
+.year1-drop select{ width:70px;}
+
+.right-date{ margin-right:6px;}
+.right-date .lbl-txt1{ width:122px !important;}
+.left-date{ margin-right:0px;}
+.left-date .lbl-txt1{ width:122px !important;}
+.month2-drop div.selector{ width:106px;}
+.month2-drop select{ width:69px;}
+.day2-drop{ margin-left:10px;}
+.day2-drop div.selector{ width:106px;}
+.day2-drop select{ width:69px;}
+.year2-drop{ margin-left:9px;}
+.year2-drop div.selector{ width:130px;}
+.year2-drop select{ width:95px;}
+
+.basic-drop{ background:none;}
+.basic-drop div.selector{ width:358px;}
+.basic-drop select{ width:323px;}
+.basic-drop div.selector.focus{ width:344px !important; padding:0 0 0 6px;}
+.basic-drop div.selector.focus span{ width:323px !important;}
+.basic-drop div.selector.focus select{top:0px;}
+
+.mid1-drop{ background:none; margin-left:3px;}
+.mid1-drop div.selector{ width:353px;}
+.mid1-drop select{ width:318px;}
+
+.filter-drop{ background:none; margin-left:5px;}
+.filter-drop div.selector{ width:240px; padding:0 0 0 14px;}
+.filter-drop select{ width:201px;}
+.filter-drop div.selector.focus{ width:222px !important; padding:0 0 0 10px;}
+.filter-drop div.selector.focus span{ width:201px !important;}
+.filter-drop div.selector.focus select{top:0; left:-4px; width:240px;}
+
+.filter-block .ErrorField { border: 4px solid #FF0000; padding: 10px 8px 6px; }
+.filter-block .selector.ErrorField {padding: 0 0 0 10px;  width: 222px !important; border: 4px solid red; height:42px; line-height:42px;  -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px;}
+.filter-block .selector.ErrorField span{ padding-left:0px; line-height:43px}
+
+.request-drop{ background:none;}
+.request-drop div.selector{ width:718px; padding:0 0 0 14px;}
+.request-drop select{ width:683px;}
+
+.selectall-drop{ margin-left:9px; float:left; width:145px;}
+.selectall-drop div.selector{ width:145px;}
+.selectall-drop select{ width:110px;}
+
+.clear{ clear:both; height:0px;}
+
+/*Table Select */
+.table-drop div.selector { background:#fcfcfc; border:1px solid #f0f0f0; line-height:26px; height:26px; padding: 0 0 0 8px; position: relative; overflow: hidden; 
+-webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px;}
+.table-drop div.selector span { text-overflow: ellipsis; display: block; overflow: hidden; white-space: nowrap; background: url(../img/dropdown-ico.png) no-repeat 90% center; height: 14px; line-height: 14px; padding:7px 20px 5px 0; cursor: pointer; width: 100%; display: block; }
+.table-drop div.selector.fixedWidth { width: 190px; }
+.table-drop div.selector.fixedWidth span { width: 155px; }
+.table-drop div.selector select { opacity: 0; filter: alpha(opacity=0); -moz-opacity: 0; border: none; background: none; position: absolute; height:24px; top: 4px; left: 0px; width: 100%; }
+.table-drop div.selector.active { background:#fcfcfc;  }
+.table-drop div.selector.active span { background: url(../img/dropdown-ico.png) no-repeat 90% center;}
+.table-drop div.selector.hover, .table-drop div.selector.focus { background:#fcfcfc; width:auto !important; }
+.table-drop div.selector.hover span, .table-drop div.selector.focus span { background: url(../img/dropdown-ico.png) no-repeat 90% center;}
+.table-drop div.selector.hover.active, .table-drop div.selector.focus.active { background:#fcfcfc; }
+.table-drop div.selector.hover.active span, .table-drop div.selector.focus.active span { background: url(../img/dropdown-ico.png) no-repeat 90% center;}
+.table-drop div.selector.disabled, .table-drop div.selector.disabled.active { background:#fcfcfc;}
+.table-drop div.selector.disabled span, .table-drop div.selector.disabled.active span { background: url(../img/dropdown-ico.png) no-repeat 90% center;}
+
+/*Table Select */
+.table-drop div.selector { font-weight: bold; color: #000; font-size: 14px; }
+.table-drop div.selector span { color: #929292; text-shadow: 0 1px 0 white; font-weight: normal;  font-family: 'AvenirLTStd-Black';  font-size:14px; text-transform:uppercase;}
+.table-drop div.selector.disabled span, .table-drop div.selector.disabled.active span { color: #bbb; }
+.cart-dropin div.selector{width:58px !important;}
+.cart-dropin div.selector span{width:33px !important;}
+
+.smalldrop div.selector{ width:90px !important;}
+.smalldrop div.selector span{width:72px !important}
+
+/*New Style 27Aug*/
+.register-content div.selector select, .basic-form div.selector select{ line-height:42px;}
+#DocumentStoragecenter .filter-search div.selector{width:185px; background:#fcfcfc; border:1px solid #f0f0f0; line-height:26px; height:26px; padding: 0 0 0 8px; position: relative; overflow: hidden; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px;}
+#DocumentStoragecenter .filter-search div.selector span { width:160px !important; text-overflow: ellipsis; display: block; overflow: hidden; white-space: nowrap; background: url(../img/dropdown-ico.png) no-repeat 87% center; height: 14px; line-height: 14px; padding:7px 34px 5px 0;  cursor: pointer; display: block; }
+#DocumentStoragecenter .filter-search select{ width:146px; line-height:21px;}
+#DocumentStoragecenter .filter-search div.selector.focus{background:#fcfcfc; border:1px solid #f0f0f0; line-height:26px; height:26px; padding: 0 0 0 8px; position: relative; overflow: hidden; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px;}
+#DocumentStoragecenter .filter-search div.selector.focus select{width:185px !important; top:0; left:-4px; }
+#media-div{ float:left; margin-top:10px;}
+.select-drop .input-field-all{ margin:0px;}

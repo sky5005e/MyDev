@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Validations>
+  <Required>Please enter field.</Required>
+  <Valid>Please enter a valid field.</Valid>
+  <Alphanumeric>Please enter only alphabets and numbers.</Alphanumeric>
+  <Alpha>Please enter only alphabets.</Alpha>
+  <Number>Please enter only numbers.</Number>
+  <Unique>Field is already in use.</Unique>
+  <NotInRecords>The field you entered is not in our records.</NotInRecords>
+  <NotEqualTo>Please select field.</NotEqualTo>
+  <DeleteConfirm>Are you sure you want to delete field?</DeleteConfirm>
+  <ProcessError>Oops...the system was unable to perform your operation. Please try later...</ProcessError>
+  <ImageType>Please upload only {0} files.</ImageType>
+  <FileRequired>You did not select any files. Click on Browse to add a file.</FileRequired>
+  <FileSize>
+    The file you are trying to upload is larger than size.<br/>Please reduce the size of the image or select a new photo.
+  </FileSize>  
+  <ValidDate>Please enter a valid date.</ValidDate>
+  <Digit>Please enter only digits.</Digit>
+  <EqualTo>Please enter the field again.</EqualTo>
+  <PasswordNotMatch>Your Passwords do not match.</PasswordNotMatch>
+  <MaxLength>Please enter {0} characters or less.</MaxLength>
+  <MinLength>Please enter atleast {0} characters or more.</MinLength>
+  <MaxValue>Please enter a value less than or equal to {0}.</MaxValue>
+  <MinValue>Please enter a value more than or equal to {0}.</MinValue>
+  <Email>Please enter valid email.</Email>
+  <Website>Please enter valid website address.</Website>
+  <Url>Please enter valid url</Url>
+  <ValidZipCode>Please enter valid zip code.</ValidZipCode>
+</Validations>

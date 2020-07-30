@@ -1,0 +1,112 @@
+/*
+ * SimpleModal Basic Modal Dialog
+ * http://www.ericmmartin.com/projects/simplemodal/
+ * http://code.google.com/p/simplemodal/
+ *
+ * Copyright (c) 2008 Eric Martin - http://ericmmartin.com
+ *
+ * Licensed under the MIT license:
+ *   http://www.opensource.org/licenses/mit-license.php
+ *
+ * Revision: $Id: basic_ie.css 132 2008-05-23 16:05:17Z emartin24 $
+ *
+ */
+
+/* IE 6 hacks*/
+
+#simplemodal-container a.modalCloseImg
+{
+	background: none;
+	right: -14px;
+	width: 22px;
+	height: 26px;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src= 'images/x.png' ,sizingMethod= 'scale' );
+}
+#simplemodal-container .button
+{
+	background: none;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src= 'images/bg-button.gif' ,sizingMethod= 'scale' );
+	height: 20px;
+	color: #FFF;
+	font-size: 11px;
+	font-weight: bold;
+	line-height: 19px;
+	border: none;
+	width: auto;
+	cursor: pointer;
+	cursor: hand;
+}
+
+#simplemodal-image-container a.modalCloseImg
+{
+	background: none;
+	right: -14px;
+	width: 22px;
+	height: 26px;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src= 'images/x.png' ,sizingMethod= 'scale' );
+}
+#simplemodal-image-container .button
+{
+	background: none;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src= 'images/bg-button.gif' ,sizingMethod= 'scale' );
+	height: 20px;
+	color: #FFF;
+	font-size: 11px;
+	font-weight: bold;
+	line-height: 19px;
+	border: none;
+	width: auto;
+	cursor: pointer;
+	cursor: hand;
+}
+
+
+
+#ctl00_ContentPlaceHolder1_RadProgressArea
+{
+	height:auto;
+	width:600px;
+	background-color: #fff;
+	border: 3px solid #000;
+	z-index: 3200;
+	padding:10px;
+	position:relative;
+}
+
+#inner
+{
+	WIDTH: 100%; 
+	HEIGHT: 700px; 
+	position:absolute;	 
+	Z-INDEX: 90; 
+	/*
+	TOP: 650px; 
+	LEFT: 0px; 
+	*/
+	filter:shadow(color:grey);
+} 
+
+#inner1
+{
+	top:100px;
+	position:relative;
+	Z-INDEX:100; 
+	background-color:white;
+	/*border:solid #7b7b7b 2px;*/
+	width:600px;
+	
+} 
+
+#layer1 
+{
+	position:absolute;	 
+	Z-INDEX: 90; 
+	TOP: 0px; 
+	LEFT: 0px; 
+	WIDTH: 100%; 
+	HEIGHT: 250%; 
+	background-color:#fff;
+	Filter:alpha(opacity=90); 
+	-moz-opacity: 0.6;
+	opacity:.20;
+}

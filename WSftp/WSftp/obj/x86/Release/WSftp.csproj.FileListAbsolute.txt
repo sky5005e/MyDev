@@ -1,0 +1,10 @@
+C:\Lenevo\desktop\Hardidsk\MyDev\WSftp\WSftp\bin\Release\WSftp.exe.config
+C:\Lenevo\desktop\Hardidsk\MyDev\WSftp\WSftp\bin\Release\WSftp.exe
+C:\Lenevo\desktop\Hardidsk\MyDev\WSftp\WSftp\bin\Release\WSftp.pdb
+C:\Lenevo\desktop\Hardidsk\MyDev\WSftp\WSftp\obj\x86\Release\WSftp.csprojAssemblyReference.cache
+C:\Lenevo\desktop\Hardidsk\MyDev\WSftp\WSftp\obj\x86\Release\WSftp.ProjectInstaller.resources
+C:\Lenevo\desktop\Hardidsk\MyDev\WSftp\WSftp\obj\x86\Release\WSftp.Service1.resources
+C:\Lenevo\desktop\Hardidsk\MyDev\WSftp\WSftp\obj\x86\Release\WSftp.csproj.GenerateResource.cache
+C:\Lenevo\desktop\Hardidsk\MyDev\WSftp\WSftp\obj\x86\Release\WSftp.csproj.CoreCompileInputs.cache
+C:\Lenevo\desktop\Hardidsk\MyDev\WSftp\WSftp\obj\x86\Release\WSftp.exe
+C:\Lenevo\desktop\Hardidsk\MyDev\WSftp\WSftp\obj\x86\Release\WSftp.pdb

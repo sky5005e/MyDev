@@ -1,0 +1,40 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/NewDesign/HeaderMaster.master" AutoEventWireup="true"
+    CodeFile="LoginMaster.master.cs" Inherits="LoginMaster" %>
+    
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+
+    <script type="text/javascript" language="javascript">
+        $().ready(function() {
+            $(".first-field").on("keypress blur", function(e) {
+                $.properCase(this);
+            });
+        });    
+    </script>
+    
+    
+
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderMaster" runat="Server">
+    <div class="loginBlock">
+        <div class="loginBlock-inner">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+            <div class="brand-logo">
+                <a href="#" title="SAP">
+                    <img src="<%= System.Configuration.ConfigurationManager.AppSettings["NewDesignSiteurl"]%>StaticContents/img/sap-logo.png"
+                        width="95" height="13" alt="SAP"></a></div>
+        </div>
+    </div>
+    <div class="popup-outer" id="help-video-block">
+        <div class="popupInner">
+            <div class="help-video-block">
+                <a href="javascript:;" class="hide-popup" onclick="CloseHelpVideo()">Close</a>
+                <div class="video-player" style="overflow: hidden; width: 874px; height: 517px">
+                    <iframe id="HelpVideoIframe"  width="874" height="517" frameborder="0"  >
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</asp:Content>

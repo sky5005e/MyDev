@@ -1,0 +1,10 @@
+C:\Lenevo\desktop\Hardidsk\MyDev\CreatePDFUbrx\CreatePDF\bin\Debug\CreatePDF.exe.config
+C:\Lenevo\desktop\Hardidsk\MyDev\CreatePDFUbrx\CreatePDF\bin\Debug\CreatePDF.exe
+C:\Lenevo\desktop\Hardidsk\MyDev\CreatePDFUbrx\CreatePDF\bin\Debug\CreatePDF.pdb
+C:\Lenevo\desktop\Hardidsk\MyDev\CreatePDFUbrx\CreatePDF\obj\x86\Debug\CreatePDF.csprojAssemblyReference.cache
+C:\Lenevo\desktop\Hardidsk\MyDev\CreatePDFUbrx\CreatePDF\obj\x86\Debug\CreatePDF.csproj.CoreCompileInputs.cache
+C:\Lenevo\desktop\Hardidsk\MyDev\CreatePDFUbrx\CreatePDF\obj\x86\Debug\CreatePDF.csproj.CopyComplete
+C:\Lenevo\desktop\Hardidsk\MyDev\CreatePDFUbrx\CreatePDF\obj\x86\Debug\CreatePDF.exe
+C:\Lenevo\desktop\Hardidsk\MyDev\CreatePDFUbrx\CreatePDF\obj\x86\Debug\CreatePDF.pdb
+C:\Lenevo\desktop\Hardidsk\MyDev\CreatePDFUbrx\CreatePDF\bin\Debug\EPPlus.dll
+C:\Lenevo\desktop\Hardidsk\MyDev\CreatePDFUbrx\CreatePDF\bin\Debug\EPPlus.xml

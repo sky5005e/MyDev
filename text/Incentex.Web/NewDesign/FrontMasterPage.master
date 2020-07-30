@@ -1,0 +1,1113 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="FrontMasterPage.master.cs"
+    Inherits="FrontMasterPage" %>
+
+<%@ Register TagPrefix="uc" TagName="CommonHeader" Src="~/NewDesign/UserControl/NewCommonHeader.ascx" %>
+<!DOCTYPE html>
+<html>
+<head id="Head1" runat="server">
+    <noscript>
+        <style type="text/css">
+            #noscripttag
+            {
+                background-color: graytext;
+                bottom: 0;
+                left: 0;
+                opacity: 0.98;
+                position: fixed;
+                right: 0;
+                top: 0;
+                z-index: 99999;
+            }
+            .noscriptbody
+            {
+                background-color: #FFFFFF;
+                border: 2px solid Black;
+                color: Red;
+                font-size: 30px;
+                line-height: 50px;
+                margin: 5%;
+                text-align: center;
+            }
+        </style>
+        <div id="noscripttag" class="loader">
+            <div class="noscriptbody">
+                <p style="padding: 10px;">
+                    Your Browser has disabled Javascript. Please Enable Javascript on your browser in
+                    order to see this page in all of its glory!
+                </p>
+                <p style="padding: 10px;">
+                    Internet Options => Content Tab => Check Enable Javascript option => Click ok =>
+                    Refresh the Page.</p>
+            </div>
+        </div>
+    </noscript>
+    <uc:CommonHeader ID="ucCommonHead" runat="server" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=1020" />
+    <title>Incentex</title>
+
+    <script type="text/javascript">
+
+        var siteurl = '<%=ConfigurationSettings.AppSettings["NewDesignSiteurl"].ToString()%>';
+        //
+        var ActiveId = "";
+        function DisplayContactUs() {
+
+            $('.contact-link').toggleClass('opened');
+            if ($('.contact-link').hasClass('opened')) {
+                $('.welcome-txt').slideUp({ queue: false });
+                $('.contact-block').slideDown({ queue: false });
+                $('body').removeClass('userLogin');
+                $('body').addClass('afterLogin contact-page');
+            }
+            else {
+                $('.welcome-txt').slideDown(function() {
+                    $('body').addClass('userLogin');
+                    $('body').removeClass('afterLogin contact-page');
+                    $('.contact-link').removeClass('active');
+                    //SetActive
+                    $("#" + ActiveId).addClass('active');
+                    ActiveId = "";
+                });
+                $('.contact-block').slideUp({ queue: false });
+
+
+            }
+
+        }
+        
+        
+           function CloseMediaHelpVideo(iframeid) {
+           
+            $(".fade-layer").hide();
+            $("#" + iframeid).attr("src", '');
+            }
+       
+        $(document).ready(function() {
+            //common code for all pages...        
+        
+            $('input').iCheck({
+                checkboxClass: 'icheckbox_flat',
+                radioClass: 'iradio_flat'
+            });
+            
+            $('.apple_checkbox input, .icheckbox_flat input').on('ifClicked', function() {
+                var checkBox = $(this);                
+                $(checkBox).click();
+                
+                var moasOption = $(checkBox).parents(".chkMOAS").length > 0;
+                var approverOption = $(checkBox).parents(".approver").length > 0;
+                
+                if (moasOption || approverOption) {
+                    $(checkBox).attr('checked', !$(checkBox).is(":checked"));
+                    if (moasOption)                        
+                        $(".pnlMOASApprovers").toggle($(".chkMOAS input:checked").length > 0);
+                    else
+                        $.updatePriority($(checkBox));
+                }
+            });
+            
+            $(".current-tab input, .current-tab select, #container input, #container select, #container textarea").on('input, change', function() {
+                TabInfoChanged();
+            });
+            
+            $(".current-tab input[type='checkbox'], #container input[type='checkbox']").one('click', function(e) {
+                TabInfoChanged();
+            });
+            
+            $(".setDatePicker").datepicker({
+                changeMonth: true,
+                changeYear: true
+            });            
+            
+            $(".first-field").on("keypress blur", function(e) {
+                $.properCase(this);                
+            });
+            
+            $(".containerNavigation ul li#" + $("#hdnActiveLink").val() + "").addClass('active');
+
+//            $(window).scroll(function() {
+//                $("#ctl00_hdnScrollY").val($(window).scrollTop());
+//            });
+
+//            $(window).scrollTop($("#ctl00_hdnScrollY").val());
+            
+            //common code for all pages ends here...
+
+            // Display this RSS Feed on page Load
+            getRSSFeedFirsTime();
+
+            function tick2() {
+                $('#movingUL li:first').slideUp(function() { $(this).appendTo($('#movingUL')).slideDown(); });
+            }
+            setInterval(function() { tick2() }, 7000);
+            // For Already Added item
+            BindCartItems();
+            // New notification
+            BindNotificationItems();
+            // Start Currency popup drop down
+            try {
+                $("#ctl00_ddlCurrencyFrom").msDropDown();
+                $("#ctl00_ddlCurrencyTo").msDropDown();
+            } catch (e) {
+                GeneralAlertMsg(e.message);
+            }
+            // End Currency popup drop down
+
+            $(".cart-slider-display .image-block").hoverIntent(function() {
+                $(".cart-caption", this).animate({ bottom: 0 }, { duration: 400 });
+            }, function() {
+                $(".cart-caption", this).animate({ bottom: -68 }, { duration: 400 });
+            });
+
+            $(".containerNavigation .wrapper").find('li').each(function() {
+                $(this).on('click', function(e) {
+                    if (ActiveId == "")
+                        ActiveId = $(".containerNavigation .wrapper").find('li.active').attr("id");
+
+                    $(".containerNavigation .wrapper").find('li').removeClass('active');
+                    $(this).addClass('active');
+                });
+            });
+        });
+        
+        function TabInfoChanged() {      
+            //alert("bg=" + $(".ctrlinfochanged").val());     
+            $("#hdnTabInfoChanged").val("true");
+            $(".ctrlinfochanged").val("true");
+            //alert("af=" + $(".ctrlinfochanged").val());
+        }
+        
+//        function AssetTabInfoChanged() {      
+//            alert("AStB=" + $(".ctrlinfochanged").val());     
+//            $(".ctrlinfochanged").val("true");
+//            $(".savebuttontotrigger").val("true");
+//            alert("AST--A=" + $(".ctrlinfochanged").val());
+//        }
+        
+        
+        // Get RSS Feed for Firstime
+        function getRSSFeedFirsTime() {
+            CheckSessionExistance(siteurl);
+            $.ajax({
+                type: "POST",
+                url: siteurl + "UserPages/WSUser.asmx/GetRSSFeedsOnPageLoad",
+                data: '{}',
+                contentType: "application/json; charset=utf-8",
+                processData: false,
+                dataType: "json",
+                success: function(msg) {
+                    var objlst = msg.d;
+                    if (objlst != undefined) {
+                        $("#movingdiv").html(objlst.HItemsHtml);
+                    }
+                },
+                error: function(x, e) {
+                    if (x.status == 500) {
+                        GeneralAlertMsg("An error has occurred during processing your request.");
+                    }
+                }
+            });
+        }
+
+
+        // For Bind Cart Items
+        function BindNotificationItems() {            
+            CheckSessionExistance(siteurl);
+            var dvNotifications = $("#dvNotifications");
+            var lblTotalNotification = $("#ctl00_lblTotalNotification");
+            $.ajax({
+                //beforeSend: function() { ShowLoader(true); }, //Show spinner
+                //complete: function() { ShowLoader(false); }, //Hide spinner
+                type: "POST",
+                url: siteurl + "UserPages/WSUser.asmx/GetNotificationDetails",
+                data: '{}',
+                contentType: "application/json; charset=utf-8",
+                processData: false,
+                dataType: "json",
+                success: function(msg) {
+                    var objlst = msg.d;
+                    if (objlst != undefined) {
+                        dvNotifications.html(objlst.HItemsHtml);
+                        lblTotalNotification.html(objlst.TotalNumber);
+                        // For Sub Items  of Notifications scroll
+                         var ua = navigator.userAgent;
+                         var CurrEvent = '';
+                         
+                         if (ua.match('/iPhone/i') || ua.match('iPhone;') || ua.match('/iPod/i') || ua.match('iPod;') || ua.match('/iPad/i') || ua.match('iPad;'))
+                                    CurrEvent = "touchstart";
+                         else
+                                    CurrEvent = "click";
+                            
+                        
+                        $('.notification-header').bind(CurrEvent,function(e) {
+                            $(this).parent().find('.notifyHeader1').slideToggle();
+                        });
+                        
+                        $(".notifyHeader1").niceScroll(
+			            {
+			                touchbehavior: false,
+			                cursorcolor: "#666",
+			                cursoropacitymax: 0.7,
+			                cursorwidth: 6,
+			                cursorborder: "1px solid #666",
+			                cursorborderradius: "8px",
+			                autohidemode: "scroll"
+			            });
+			            $(".innernNavigation li:last-child").addClass("last");
+                        $(".innernNavigation > li .notificationSubnav").hide();
+                        $(".innernNavigation > li").hover(function() {
+                            $(this).find('.notificationSubnav').show();
+                        }, function() {
+                            $('.notificationSubnav').hide();
+                        });
+                        $('.innernNavigation > li > a .num-display span').css('display','inline-block');
+                        //GeneralAlertMsg($(".header-cart-btn a").length);
+                        //SetLinkforIpadForAnchorTag($('.innernNavigation li #dvNotifications a,.header-cart-btn a'),CurrEvent);
+                    }
+                },
+                error: function(x, e) {
+                    if (x.status == 500) {
+                        GeneralAlertMsg("An error has occurred during processing your request.");
+                    }
+                }
+            });
+        }
+        // For Bind Cart Items
+        function BindCartItems() {
+            CheckSessionExistance(siteurl);
+            var dvCart = $("#dvCart");
+            var lblCartAmount = $("#ctl00_lblCartTotalAmount");
+            $.ajax({
+                type: "POST",
+                url: siteurl + "UserPages/WSUser.asmx/GetAllCartItems",
+                data: '{}',
+                contentType: "application/json; charset=utf-8",
+                processData: false,
+                dataType: "json",
+                success: function(msg) {
+                    var objlst = msg.d;
+                    if (objlst != undefined) {
+                        dvCart.html(objlst.HItemsHtml);
+                        lblCartAmount.html(objlst.TotalNumber);
+                    }
+                },
+
+                error: function(x, e) {
+                    if (x.status == 500) {
+                        GeneralAlertMsg("An error has occurred during processing your request.");
+                    }
+                }
+            });
+        }
+
+        // For Remove Items from  Cart
+        function RemoveCartItemsFromMaster() {
+            CheckSessionExistance(siteurl);
+            // As per Ken: display below alert
+            GeneralAlertMsg("You are about to delete all of the items in your cart.");
+            var _myShoppingCartID = new String(); // to pass _myShoppingCartID field. here we will pass null value
+            $.ajax({
+                type: "POST",
+                url: siteurl + "UserPages/WSUser.asmx/RemoveItemFromCart",
+                data: '{"MyShoppingCartID": "' + _myShoppingCartID + '"}',
+                contentType: "application/json; charset=utf-8",
+                processData: false,
+                dataType: "json",
+                success: function(msg) {
+                    GeneralAlertMsg("Cart Items successfully removed.");
+                    BindCartItems();
+                    $("div.cart-remove").each(function() {
+                        if ($(this).css("display") == "block") {
+                            $(this).siblings("div.cart-caption").show();
+                            $(this).hide();
+                        }
+                        else {
+                        }
+                    });
+                },
+
+                error: function(x, e) {
+                    if (x.status == 500) {
+                        GeneralAlertMsg("An error has occurred during processing your request.");
+                    }
+                }
+            });
+        }
+
+        // Approve Order
+        function ApprovalOrderScript(OrderID) {
+            ShowLoader(true);
+            CheckSessionExistance(siteurl);
+            $.ajax({
+                type: "POST",
+                url: siteurl + "UserPages/WSUser.asmx/ApproveOrder",
+                data: '{"OrderID": "' + OrderID + '"}',
+                contentType: "application/json; charset=utf-8",
+                processData: false,
+                dataType: "json",
+                success: function(msg) {
+                    BindNotificationItems();
+                    ShowLoader(false);
+                    //GeneralAlertMsg(msg.d);
+                    GeneralAlertMsg(msg.d);
+                },
+
+                error: function(x, e) {
+                    if (x.status == 500) {
+                        GeneralAlertMsg("An error has occurred during processing your request.");
+                    }
+                }
+            });
+        }
+
+        // Cancel Order
+        function RejectOrderScript(value) {
+            var OrderID = value.title;
+            var ReasonMsg = $("#ctl00_txtMstReasonCode").val().trim();
+            if (ReasonMsg.length > 0) {
+                $(".fade-layer").hide();
+                $("#ctl00_pnlMstCancelOrder").hide();
+                ShowLoader(true); ;
+                CheckSessionExistance(siteurl);
+                $.ajax({
+                    type: "POST",
+                    url: siteurl + "UserPages/WSUser.asmx/RejectOrder",
+                    data: '{"OrderID": "' + OrderID + '","ReasonMsg": "' + ReasonMsg + '"}',
+                    contentType: "application/json; charset=utf-8",
+                    processData: false,
+                    dataType: "json",
+                    success: function(msg) {
+                        BindNotificationItems();
+                        ShowLoader(false);
+                        //GeneralAlertMsg(msg.d);
+                        GeneralAlertMsg(msg.d);
+                    },
+
+                    error: function(x, e) {
+                        if (x.status == 500) {
+                            GeneralAlertMsg("An error has occurred during processing your request.");
+                        }
+                    }
+                });
+            }
+            else {
+                GeneralAlertMsg('Please enter reason for cancel');
+            }
+        }
+        function ShowReasonForCancelPopup(OrderID) {
+            $("#CancelOrder-master-popup").css('top', '0');
+            $(".fade-layer").show();
+            $("#ctl00_pnlMstCancelOrder").show();
+            // set id to button tittle
+            var rejectbtn = document.getElementById('lnkMstCancelOrderSubmit');
+            rejectbtn.title = OrderID;
+            $("#ctl00_txtMstReasonCode").val('');
+            //.setAttribute('onclick', 'RejectOrderScript(' + OrderID + ',this);');
+        }
+        // Approve/Reject User
+        function ApprovalUserScript(regisID, flagtype) {
+            CheckSessionExistance(siteurl);
+            ShowLoader(true);
+            var opurl = new String();
+            if (flagtype == "true") {
+                opurl = siteurl + "UserPages/WSUser.asmx/ApproveUser";
+            }
+            else {
+                opurl = siteurl + "UserPages/WSUser.asmx/RejectUser";
+            }
+            $.ajax({
+                type: "POST",
+                url: opurl,
+                data: '{"RegistrationID": "' + regisID + '"}',
+                contentType: "application/json; charset=utf-8",
+                processData: false,
+                dataType: "json",
+                success: function(msg) {
+                    BindNotificationItems();
+                    ShowLoader(false);
+                    //GeneralAlertMsg(msg.d);
+                    GeneralAlertMsg(msg.d);
+                },
+
+                error: function(x, e) {
+                    if (x.status == 500) {
+                        GeneralAlertMsg("An error has occurred during processing your request.");
+                    }
+                }
+            });
+        }
+        // To Remove Flag from Asset
+        function FlagRemoval(EqpID) {
+            ShowLoader(true);
+            CheckSessionExistance(siteurl);
+            $.ajax({
+                type: "POST",
+                url: siteurl + "UserPages/WSUser.asmx/RemoveFlag",
+                data: '{"EquipmentMasterID": "' + EqpID + '"}',
+                contentType: "application/json; charset=utf-8",
+                processData: false,
+                dataType: "json",
+                success: function(msg) {
+                    BindNotificationItems();
+                    ShowLoader(false);
+                },
+
+                error: function(x, e) {
+                    if (x.status == 500) {
+                        GeneralAlertMsg("An error has occurred during processing your request.");
+                    }
+                }
+            });
+        }
+        // START Show Feed Comments
+        function ShowFeedComments(hrefval) {
+            ShowLoader(true);
+            $("#Frame-RSSFeedInfo").css('top', '0');
+            $("#ctl00_pnlRSSFeedInfo").show();
+            $("#iframeRSSFeedInfo").attr("onload","ShowLoader(false);");
+            $("#iframeRSSFeedInfo").attr("src", hrefval);
+            $(".fade-layer").show();
+            SetPopUpAtTop();
+        }
+        
+        function RemoveRSSUrl() {
+            $("#iframeRSSFeedInfo").attr("src", "");
+        }
+        // END Show Feed Comments
+
+        //Show User-Basic-Info
+        function ShowUserBasicInfo(regisID) {
+            ShowLoader(true);
+            var path = siteurl + "UserFrameItems/BasicInfo.aspx?RegisID=" + regisID;
+            CheckSessionExistance(siteurl);
+            $("#Frame-master-popup").css('top', '0');
+            $(".fade-layer").show();
+            $("#ctl00_pnlUserInfo").show();
+            $("#ctl00_iframeInfo").attr("onload", ShowLoader(false));
+            $("#ctl00_iframeInfo").attr("src", path);
+            SetPopUpAtTop();
+        }
+        function ShowHelpVideo() {
+            $("#Frame-master-popup").css('top', '0');
+            $("#ctl00_iframeInfo").attr("src", 'http://vimeo.com/user19227861/review/72414822/f9ce776c88');
+        }
+        // Close Message Info
+        function CloseMessageInfo(ServiceTicketID) {
+            CheckSessionExistance(siteurl);
+            ShowLoader(true);
+            $.ajax({
+                type: "POST",
+                url: siteurl + "UserPages/WSUser.asmx/MessageMarkRead",
+                data: '{"ServiceTicketID": "' + ServiceTicketID + '"}',
+                contentType: "application/json; charset=utf-8",
+                processData: false,
+                dataType: "json",
+                success: function(msg) {
+                    BindNotificationItems();
+                    ShowLoader(false);
+                },
+
+                error: function(x, e) {
+                    if (x.status == 500) {
+                        GeneralAlertMsg("An error has occurred during processing your request.");
+                    }
+                }
+            });
+
+        }
+        // Save Notes Info
+        function SaveNotes(value) {
+            var ServiceTicketID = value.title;
+            var NoteMsg = $("#ctl00_txtReplyMsg").val().trim();
+            if (NoteMsg.length > 0) {
+                $("#ctl00_pnlMessage").hide();
+                ShowLoader(true);
+                CheckSessionExistance(siteurl);
+                $.ajax({
+                    type: "POST",
+                    url: siteurl + "UserPages/WSUser.asmx/SaveMessage",
+                    data: '{"ServiceTicketID": "' + ServiceTicketID + '","NoteMsg": "' + NoteMsg + '"}',
+                    contentType: "application/json; charset=utf-8",
+                    processData: false,
+                    dataType: "json",
+                    success: function(msg) {
+                        BindNotificationItems();
+                        $(".fade-layer").show();
+                        ShowLoader(false);
+                        //GeneralAlertMsg(msg.d);
+                        GeneralAlertMsg(msg.d);
+                    },
+
+                    error: function(x, e) {
+                        if (x.status == 500) {
+                            GeneralAlertMsg("An error has occurred during processing your request.");
+                        }
+                    }
+                });
+            }
+            else {
+                GeneralAlertMsg('Please enter Notes');
+            }
+
+        }
+        //Show Message-Info
+        function ShowMessageInfo(ServiceTicketID) {
+            //var path = "../UserFrameItems/MyMessageInfo.aspx?MessageID=" + messageID;
+            CheckSessionExistance(siteurl);
+            $("#Message-master-shop-popup").css('top', '0');
+            $(".fade-layer").show();
+            $("#ctl00_pnlMessage").show();
+            //$("#ctl00_iframeInfo").attr("src", path);
+            var SaveMessagebtn = document.getElementById('lnkSaveNotes');
+            SaveMessagebtn.title = ServiceTicketID;
+            $("#ctl00_txtReplyMsg").val('');
+            $("#boxscroll").niceScroll(
+			{
+			    touchbehavior: false,
+			    cursorcolor: "#666",
+			    cursoropacitymax: 0.7,
+			    cursorwidth: 6,
+			    cursorborder: "1px solid #666",
+			    cursorborderradius: "8px",
+			    autohidemode: "scroll"
+			})
+            var dvmsg = $("#dvmsgContents");
+            dvmsg.html();
+            $.ajax({
+                type: "POST",
+                url: siteurl + "UserPages/WSUser.asmx/GetMessageDetails",
+                data: '{"ServiceTicketID": "' + ServiceTicketID + '"}',
+                contentType: "application/json; charset=utf-8",
+                processData: false,
+                dataType: "json",
+                success: function(msg) {
+                    var objlst = msg.d;
+                    if (objlst != undefined) {
+                        dvmsg.html(objlst.HItemsHtml);
+                    }
+                },
+
+                error: function(x, e) {
+                    if (x.status == 500) {
+                        GeneralAlertMsg("An error has occurred during processing your request.");
+                    }
+                }
+            });
+        }
+        // Show Currency Popup
+        function ShowCurrencyPopup(Amount) {
+            CheckSessionExistance(siteurl);
+            $("#currency-block").css('top', '0');
+            $(".fade-layer").show();
+            $("#ctl00_pnlUpItem").hide();
+            $("#ctl00_pnlCurrency").show();
+            $('#ctl00_txtCurrencyFrom').val(Amount);
+            $('#ctl00_lblNewCurrencyValue').html('$ ' + Amount + ' U.S. dollars');
+            SetPopUpAtTop();
+        }
+
+        function ShowItem(StoreProductID, MyShoppingCartID, sizeid, soldbyid, qty) {
+            ShowLoader(true);
+            CheckSessionExistance(siteurl);
+            $("#master-shop-popup").css('top', '0');
+            $(".fade-layer").show();
+            $("#ctl00_pnlUpItem").show();
+            $("#ctl00_pnlCurrency").hide();
+            var Updatepath = siteurl + "UserFrameItems/ShopProductItem.aspx?spID=" + StoreProductID + "&cartId=" + MyShoppingCartID + "&sizeID=" + sizeid + "&soldbyid=" + soldbyid + "&qty=" + qty;
+            $("#iframeUpdateItem").attr("onload",ShowLoader(false));
+            $("#iframeUpdateItem").attr("src", Updatepath);
+            SetPopUpAtTop();
+
+        }
+        function ExitFromSystem() {
+            $.ajax({
+                type: "POST",
+                url: siteurl + "UserPages/WSUser.asmx/SystemExit",
+                data: '{}',
+                contentType: "application/json; charset=utf-8",
+                processData: false,
+                dataType: "json",
+                success: function(msg) {
+                    var objlst = msg.d;
+                    if (objlst != undefined) {
+                        window.location = siteurl + "login.aspx";
+                    }
+                },
+
+                error: function(x, e) {
+                    if (x.status == 500) {
+                        GeneralAlertMsg("An error has occurred during processing your request.");
+                    }
+                }
+            });
+        }
+        
+        function ShowFlaggedAssetsNotePopup(AssetID)
+        {
+            $("#Frame-Asset-popup").css('top', '0');
+            $(".fade-layer").show();
+            $("#<%= pnlAssetNote.ClientID %>").show();
+            var Updatepath = siteurl + "AssetFrameItems/ViewFlaggedNotes.aspx?eid=" + AssetID;
+            $("#iframeAssetNote").attr("src", Updatepath);
+            SetPopUpAtTop();
+            //Frame-Asset-popup
+        }
+    </script>
+
+    <script type="text/javascript" language="javascript">
+//        $().ready(function() {
+//            $(window).scroll(function() {
+//                $("#ctl00_hdnScrollY").val($(window).scrollTop());
+//            });
+
+//            $(window).scrollTop($("#ctl00_hdnScrollY").val());
+//        });
+        function RemoveVideo() {
+            $("#iframeUpdateItem").attr("src", '');
+        }
+        function RemoveSRC() {
+            $("#ctl00_iframeInfo").attr("src", '');
+        }
+        
+    </script>
+
+    <script type="text/javascript">
+    function GetHelpVideo(ModuleName,PageOrPupupName) {
+    
+    $.ajax({
+        type: "POST",
+        url: siteurl + "UserPages/WSUser.asmx/GetHelpVideoOrDoc",
+        data: "{'Type':'help video', 'ModuleName':'" + ModuleName + "','PageOrPopupTitle':'" + PageOrPupupName + "'}",
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        success: function(msg) {
+                        if(msg.d!="")
+                        {
+                        ShowHelpVideo(msg.d);
+                        }
+        },
+        error: function(x, e) {
+        }
+     });
+    }
+    
+    
+    function GetDocumentLink(ModuleName,PageOrPupupName) {
+    
+    $.ajax({
+        type: "POST",
+        url: siteurl + "UserPages/WSUser.asmx/GetHelpVideoOrDoc",
+        data: "{'Type':'document link', 'ModuleName':'" + ModuleName + "','PageOrPopupTitle':'" + PageOrPupupName + "'}",
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        success: function(msg) {
+                        if(msg.d!="")
+                        {
+                        window.open(siteurl + 'DocmentStorageCenter/' + msg.d );
+                        }
+        },
+        error: function(x, e) {
+        }
+     });
+    }
+    function ShowHelpVideo(VidUrl) {
+         
+            $("#help-video-block").css('top', '0');
+            $(".fade-layer").show();
+            $("#help-video-block").show();
+            var videoURL =VidUrl;
+            $("#HelpVideoIframe").attr("src", videoURL);
+            SetPopUpAtTop();
+        }
+
+
+
+  function CloseHelpVideo() {
+           
+            $("#help-video-block").hide();
+            $("#HelpVideoIframe").attr("src", '');
+        }
+    </script>
+
+    <!--[if IE ]>
+<link rel="stylesheet" type="text/css" href="StaticContents/css/ie.css">
+<![endif]-->
+    <!--[if IE 9 ]>
+<link rel="stylesheet" type="text/css" href="StaticContents/css/ie9.css">
+<![endif]-->
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="userLogin has-js">
+    <span id="fade-layer" style="display: none;" class="fade-layer"></span><span style="display: none;"
+        class="progress-layer"><em>&nbsp;</em></span>
+    <!-- start header -->
+    <form id="Form" runat="server">
+    <%--<asp:HiddenField ID="hdnScrollY" runat="server" />--%>
+    <input type="hidden" id="hdnTabInfoChanged" value="false" />
+    <input type="hidden" id="hdnCurrentTab" value="" />
+    <input type="hidden" id="hdnClickedTab" value="" />
+    <header id="header" class="cf">
+	<div class="wrapper">
+  	<div class="header-inner cf">
+    	<h1 id="logo"><a href='<%= System.Configuration.ConfigurationManager.AppSettings["NewDesignSiteurl"] + "UserPages/Index.aspx" %>' title="incentex">incentex</a></h1>
+    	
+    <ul class="innernNavigation">
+    	<li><a href="javascript: void(0);"><em></em>My Profile</a>
+      	<ul class="profile-subnav cf">
+      	<% if (IncentexGlobal.CurrentMember.Usertype == Convert.ToInt64(Incentex.DAL.Common.DAEnums.UserTypes.CompanyAdmin) || IncentexGlobal.CurrentMember.Usertype == Convert.ToInt64(Incentex.DAL.Common.DAEnums.UserTypes.CompanyEmployee))
+         { %> <li><a  id="myacountinfo" onclick="ExecuteLinkHref('<%= System.Configuration.ConfigurationManager.AppSettings["NewDesignSiteurl"] + "UserPages/MyAccountInfo.aspx" %>', this.id);" ontouchstart="ExecuteLinkHref('<%= System.Configuration.ConfigurationManager.AppSettings["NewDesignSiteurl"] + "UserPages/MyAccountInfo.aspx" %>', this.id);"> My Account Information</a></li> <% } %>
+        	<li><asp:LinkButton ID="lnklogOut" runat="server" OnClick="lnklogOut_Click" CausesValidation="false"> Logout</asp:LinkButton></li>
+        </ul>
+      </li>
+      <li><a href="javascript: void(0);"><em></em><span class="nav-title">NOTIFICATIONS</span><span class="num-display cf">
+      <asp:Label ID="lblTotalNotification"
+            runat="server"></asp:Label></span></a>
+        <div id="dvNotifications">
+      </div>
+      </li>
+      <li>
+      <a href="javascript: void(0);"><em></em><span class="nav-title">CART</span> <span class="num-display cf"><asp:Label ID="lblCartTotalAmount"
+            runat="server"></asp:Label></span></a>
+        <div class="header-cartNav">
+      <div id="dvCart"></div>
+      </div>
+      </li>
+    </ul>
+    <div class="search-field">
+    	<label><span class="search-ico"></span><asp:TextBox class="input-search default_title_text" ID="txtSearch" runat="server" placeholder="SEARCH SYSTEM..."></asp:TextBox></label>
+      <a href="javascript: void(0);" class="close-pop"><img src="<%= System.Configuration.ConfigurationManager.AppSettings["NewDesignSiteurl"]%>StaticContents/img/cross-ico.png" width="8" height="8" alt="cross"></a>
+      <div class="search-showblock">
+      	<div id="search-showblock">
+        	
+        	<ul class="cf">
+        	<li><span>&nbsp;</span><a href="javascript: void(0);" title="Show All...">Show All...</a></li>
+          <li><span>Top Hit</span><a href="javascript: void(0);" title="Adipiscing Cras Purus Hover">Adipiscing Cras Purus Hover</a></li>
+          <li><span>Issuance</span><a href="javascript: void(0);" title="Lorem Sit Ullamcorper Euismod Ligula...">Lorem Sit Ullamcorper Euismod Ligula...</a></li>
+          <li><span>&nbsp;</span><a href="javascript: void(0);" title="Ridiculus Euismod Ornare Tortor Cras">Ridiculus Euismod Ornare Tortor Cras</a></li>
+          <li><span>Resources</span><a href="javascript: void(0);" title="Mollis Pharetra Venenatis Fusce Biben...">Mollis Pharetra Venenatis Fusce Biben...</a></li>
+          <li><span>&nbsp;</span><a href="javascript: void(0);" title="Lorem Sit Ullamcorper Euismod Ligula...">Lorem Sit Ullamcorper Euismod Ligula...</a></li>
+          <li><span>&nbsp;</span><a href="javascript: void(0);" title="Ridiculus Euismod Ornare Tortor Cras">Ridiculus Euismod Ornare Tortor Cras</a></li>
+          <li><span>&nbsp;</span><a href="javascript: void(0);" title="Lorem Sit Ullamcorper Euismod Ligula...">Lorem Sit Ullamcorper Euismod Ligula...</a></li>
+          <li><span>&nbsp;</span><a href="javascript: void(0);" title="Ridiculus Euismod Ornare Tortor Cras">Ridiculus Euismod Ornare Tortor Cras</a></li>
+          <li><span>&nbsp;</span><a href="javascript: void(0);" title="Lorem Sit Ullamcorper Euismod Ligula...">Lorem Sit Ullamcorper Euismod Ligula...</a></li>
+          <li><span>&nbsp;</span><a href="javascript: void(0);" title="Ridiculus Euismod Ornare Tortor Cras">Ridiculus Euismod Ornare Tortor Cras</a></li>
+        </ul>
+        </div>
+      </div>
+    </div>
+    
+    </div>
+    <div class="welcome-txt cf">
+    	<h2><%=DateTime.Now.ToString("MMMM d, yyyy")%></h2>
+    	<div id="movingdiv">
+    	</div>
+    </div>
+    <div class="contact-block" style="display:none;">
+    	<h3>Contact Us</h3>
+      <div class="contact-txt cf"><span>Customer Support: 772-453-2764</span><a href="javascript: void(0);" class="live-chat-off">LIVE CHAT NOT AVAILABLE</a></div>
+      <div class="contact-form">
+      	<ul class="cf">
+        	<li><span class="lbl-txt">Login Email</span><input type="text" class="input-contact" placeholder="me@email.com" title="me@email.com"></li>
+         <%-- <li><span class="lbl-txt">Reason</span><input type="text" class="input-contact" ></li>--%>
+          <li><span class="lbl-txt">Subject</span><input type="text" class="input-contact" ></li>
+          <li><span class="lbl-txt">Message</span><textarea class="textarea-contact"></textarea></li>
+          <li><a href="javascript: void(0);" class="contact-btn" title="SUBMIT">SUBMIT</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+  
+</header>
+    <!-- end header -->
+    <section class="containerNavigation">
+    <%--User Link--%>
+	<div class="wrapper">
+  	<ul class="cf">
+      <li id="whats-link" class="whats-link first"><a href="javascript: void(0);" title="What's New"><span></span>What's New</a></li>
+      <% if (IncentexGlobal.CurrentMember.Usertype == Convert.ToInt64(Incentex.DAL.Common.DAEnums.UserTypes.CompanyAdmin) || IncentexGlobal.CurrentMember.Usertype == Convert.ToInt64(Incentex.DAL.Common.DAEnums.UserTypes.IncentexAdmin)
+             || IncentexGlobal.CurrentMember.Usertype == Convert.ToInt64(Incentex.DAL.Common.DAEnums.UserTypes.SuperAdmin))
+         { %> <li id="admin-link" class="admin-link"><a href='<%= System.Configuration.ConfigurationManager.AppSettings["NewDesignSiteurl"] + "Admin/Index.aspx" %>' title="Admin"><span></span>Admin</a></li> <% } %>
+      <li id="shop-link" class="shop-link"><a href='<%= System.Configuration.ConfigurationManager.AppSettings["NewDesignSiteurl"] + "UserPages/Index.aspx" %>' title="Order"><span></span>Order</a></li>
+      <li id="checkout-link" class="checkout-link"><a href='<%= System.Configuration.ConfigurationManager.AppSettings["NewDesignSiteurl"] + "UserPages/Checkout.aspx"%>' title="Checkout"><span></span>Checkout</a></li>
+      <li id="video-link" class="video-link"><a href="javascript: void(0);" title="Resources"><span></span>Resources</a></li>      
+      <!-- <li id="blog-link" class="blog-link"><a href="javascript: void(0);" title="Blog"><span></span>Blog</a></li> -->
+      <li id="contact-link" class="contact-link last"><a href="javascript:;" onclick="DisplayContactUs();" title="Contact"><span></span>Contact</a></li>
+    </ul>
+  </div>
+</section>
+    <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+    <%--Start Update Item Panel --%>
+    <asp:Panel ID="pnlUpItem" runat="server" Style="display: none;">
+        <div class="popup-outer popupouter-center" id="master-shop-popup">
+            <div class="popupInner">
+                <div class="shop-popup">
+                    <a id="aXbtn" runat="server" href="javascript: void(0);" onclick="RemoveVideo();"
+                        class="close-btn">Close</a>
+                    <iframe id="iframeUpdateItem" style="height: 500px; width: 100%;"></iframe>
+                </div>
+            </div>
+        </div>
+    </asp:Panel>
+    <%--END Update Item Panel --%>
+    <%--Start Currency Panel --%>
+    <asp:Panel ID="pnlCurrency" runat="server">
+        <div class="popup-outer" id="currency-block">
+            <div class="popupInner">
+                <div class="currency-block">
+                    <a href="javascript: void(0);" class="close-btn">Close</a>
+                    <div class="currency-content">
+                        <div class="currency-header cf">
+                            <h2>
+                                Change Currency</h2>
+                        </div>
+                        <div class="cf">
+                            <ul class="left-form">
+                                <li class="alignleft">
+                                    <label>
+                                        <span class="lbl-txt">From</span>
+                                        <asp:TextBox ID="txtCurrencyFrom" runat="server" class="input-field-year"></asp:TextBox>
+                                    </label>
+                                    <span class="currency-drop-us">
+                                        <asp:DropDownList ID="ddlCurrencyFrom" runat="server">
+                                            <asp:ListItem Text="US Dollar (USD)" Value="USD"></asp:ListItem>
+                                        </asp:DropDownList>
+                                    </span></li>
+                                <li class="alignleft">
+                                    <label>
+                                        <span class="lbl-txt">To</span>
+                                    </label>
+                                    <span class="currency-drop">
+                                        <asp:DropDownList ID="ddlCurrencyTo" runat="server" onchange="CurrencyFrom(this.value);">
+                                        </asp:DropDownList>
+                                    </span></li>
+                            </ul>
+                        </div>
+                        <div class="reg-btn-block cf">
+                            <span class="blue-btn"><strong>
+                                <asp:Label ID="lblNewCurrencyValue" runat="server"></asp:Label>
+                            </strong></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </asp:Panel>
+    <%--End Currency Panel --%>
+    <%--Start User Registration Info Panel --%>
+    <asp:Panel ID="pnlUserInfo" runat="server" Style="display: none;">
+        <div class="popup-outer" id="Frame-master-popup">
+            <div class="popupInner">
+                <div class="popup">
+                    <a id="aXBIbtn" runat="server" href="javascript: void(0);" onclick="RemoveSRC();"
+                        class="close-btn">Close</a> <a id="ahelpVideo" href="javascript: void(0);" class="help-video-btn"
+                            title="Help Video" onclick="ShowHelpVideo();">Watch Help video</a>
+                    <iframe id="iframeInfo" runat="server" style="height: 517px; width: 100%;"></iframe>
+                </div>
+            </div>
+        </div>
+    </asp:Panel>
+    <%--END User Registration Info Panel --%>
+    <%--Start Flag Assets Notes Panel --%>
+    <asp:Panel ID="pnlAssetNote" runat="server" Style="display: none;">
+        <div class="popup-outer" id="Frame-Asset-popup">
+            <div class="popupInner">
+                <div class="popup">
+                    <a class="help-video-btn" title="Help Video" href="javascript: void(0);">Help Video</a>
+                    <a id="a1" runat="server" href="javascript: void(0);" class="close-btn">Close</a>
+                    <iframe id="iframeAssetNote" style="height: 517px; width: 100%;"></iframe>
+                </div>
+            </div>
+        </div>
+    </asp:Panel>
+    <%--END Flag Assets Notes Panel --%>
+    <%--Start RSS Feed  Info Panel --%>
+    <asp:Panel ID="pnlRSSFeedInfo" runat="server" Style="display: none;">
+        <div class="popup-outer" id="Frame-RSSFeedInfo">
+            <div class="popupInner">
+                <div class="popup">
+                    <a id="acloseRsspopup" runat="server" href="javascript: void(0);" class="close-btn">
+                        Close</a>
+                    <asp:Panel ID="pnlContents" runat="server" CssClass="frame">
+                        <iframe id="iframeRSSFeedInfo" style="height: 517px; width: 100%; -webkit-overflow-scrolling: touch;
+                            overflow: scroll !important;"></iframe>
+                    </asp:Panel>
+                </div>
+            </div>
+        </div>
+    </asp:Panel>
+    <%--END RSS Feed  Info Panel --%>
+    <%--Start Message Item Panel --%>
+    <asp:Panel ID="pnlMessage" runat="server" Style="display: none;">
+        <div class="popup-outer" id="Message-master-shop-popup">
+            <div class="popupInner">
+                <a id="aXMI" runat="server" href="javascript: void(0);" class="close-btn">Close</a>
+                <div class="Message-master-shop-popup">
+                    <div id="dvmsgContents">
+                    </div>
+                    <div class="pop-message-post">
+                        <label>
+                            <span>Your Message:</span><asp:TextBox ID="txtReplyMsg" runat="server" placeholder="Typed text"
+                                class="default_title_text input-popup"></asp:TextBox>
+                        </label>
+                        <a id="lnkSaveNotes" href="javascript: void(0);" class="blue-btn" onclick="SaveNotes(this);">
+                            Save Notes</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </asp:Panel>
+    <%--END Message Item Panel --%>
+    <%--Start Reason for Cancel Order Panel --%>
+    <asp:Panel ID="pnlMstCancelOrder" runat="server" Style="display: none;">
+        <div class="popup-outer" id="CancelOrder-master-popup">
+            <div class="popupInner">
+                <a id="a2" runat="server" href="javascript: void(0);" class="close-btn">Close</a>
+                <div class="popup-block">
+                    <h3>
+                        Reason for Cancelling</h3>
+                    <label>
+                        <textarea id="txtMstReasonCode" rows="7" cols="7" runat="server" placeholder="Type reason for cancelling..."
+                            class="default_title_text multiline-text"></textarea>
+                    </label>
+                    <div class="btn-block">
+                        <a href="javacript:void (0);" id="lnkMstCancelOrderSubmit" class="blue-btn" onclick="RejectOrderScript(this);">
+                            Cancel</a>
+                    </div>
+                </div>
+                <span class="popup-bot">&nbsp;</span>
+            </div>
+        </div>
+    </asp:Panel>
+    <%--END Reason for Cancel Order Panel --%>
+    <%--Start General Msg   --%>
+    <div id="dvGeneralMsg" style="display: none;">
+        <div class="popup-outer popupouter-center" id="GeneralMsg-master-popup">
+            <div class="popupInner">
+                <div class="popup-block generalmsg-pop">
+                    <div class="popup-midd">
+                        <div class="generalmsg-content">
+                            <p id="pMsg">
+                            </p>
+                        </div>
+                        <div class="btn-block">
+                            <a href="javascript:;" id="btncloseMsg" class="blue-btn" onclick="HideMsg(true);">OK</a>
+                        </div>
+                    </div>
+                </div>
+                <span id="RedirectURL_Span" style="display: none;"></span><span class="popup-bot">&nbsp;</span>
+            </div>
+        </div>
+    </div>
+    <%--END General Msg  --%>
+    <%--Start Confirmation Popup Panel --%>
+    <div id="dvGeneralConfirmationMsg" style="display: none;">
+        <div class="popup-outer popupouter-center" id="GeneralConfirmation-master-popup">
+            <div class="popupInner">
+                <div class="popup-block generalmsg-pop">
+                    <div class="popup-midd">
+                        <div class="generalmsg-content">
+                            <p id="pdMsg">
+                            </p>
+                        </div>
+                        <div class="btn-block">
+                            <a href="javascript:;" id="aCancelSave" class="gray-btn cancel-btn" onclick="CloseGeneralConfirmation(true);">
+                                NO</a> <a href="javascript:;" id="aConfirmSave" class="blue-btn" onclick="CloseGeneralConfirmation(false);">
+                                    YES</a>
+                        </div>
+                    </div>
+                </div>
+                <span class="popup-bot">&nbsp;</span>
+            </div>
+        </div>
+    </div>
+    <%--END Reason for Cancel Order Panel --%>
+    <%--Start Confirmation Popup Panel when deleting any fields/records--%>
+    <div id="dvGeneralConfirmationForDelete" style="display: none;">
+        <div class="popup-outer popupouter-center" id="GeneralConfirmation-master-popup-delete">
+            <div class="popupInner">
+                <div class="popup-block generalmsg-pop">
+                    <div class="popup-midd">
+                        <div class="generalmsg-content">
+                            <p id="confirmMesage">
+                            </p>
+                        </div>
+                        <div class="btn-block">
+                            <a href="javascript:;" id="a3" class="gray-btn cancel-btn" onclick="return CloseGeneralConfirmationForDelete(false);">
+                                NO</a> <a href="javascript:;" id="a4" class="blue-btn" onclick="return CloseGeneralConfirmationForDelete(true);">
+                                    YES</a> <span id="ButtonIDToTrigger" style="display: none;"></span>
+                        </div>
+                    </div>
+                </div>
+                <span class="popup-bot">&nbsp;</span>
+            </div>
+        </div>
+    </div>
+    <%--End Confirmation Popup Panel when deleting any fields/records--%>
+    <%--Start Confirmation Popup Panel when deleting any fields/records--%>
+    <div id="dvGeneralConfirmationForRecordsSave" style="display: none;">
+        <div class="popup-outer popupouter-center" id="GeneralConfirmation-master-popup-recordsave">
+            <div class="popupInner">
+                <div class="popup-block generalmsg-pop">
+                    <div class="popup-midd">
+                        <div class="generalmsg-content">
+                            <p id="pdMsgForRecordSave">
+                            </p>
+                        </div>
+                        <div class="btn-block">
+                            <a href="javascript:;" id="a5" class="gray-btn cancel-btn" onclick="return CloseGeneralConfirmationForRecordsSave(true);">
+                                NO</a> <a href="javascript:;" id="a6" class="blue-btn" onclick="return CloseGeneralConfirmationForRecordsSave(false);">
+                                    YES</a>
+                        </div>
+                        <input type="hidden" id="hdnMainDiv" runat="server" class="MainDiv" value="dvBasic" />
+                        <input type="hidden" id="hdnSaveButtonToTrigger" runat="server" class="savebuttontotrigger" />
+                        <input type="hidden" id="CtrlThatFiresEvent" runat="server" class="ctrlthatfiresevent noclass" />
+                        <input type="hidden" id="CtrlInfoChanged" runat="server" class="ctrlinfochanged" value="false" />
+                        <%-- <input type="hidden" id="hdnPopupSaveButtonToTrigger" runat="server" class="popupsavebuttontotrigger" />
+                    <input type="hidden" id="PopupCtrlThatFiresEvent" runat="server" class="popupctrlthatfiresevent" />
+                    <input type="hidden" id="PopupCtrlInfoChanged" runat="server" class="popupctrlinfochanged" value="false" />--%>
+                    </div>
+                </div>
+                <span class="popup-bot">&nbsp;</span>
+            </div>
+        </div>
+    </div>
+    <%--End Confirmation Popup Panel when deleting any fields/records--%>
+    <%--Master Page Level Hidden Field--%>
+    <div class="popup-outer" id="help-video-block">
+        <div class="popupInner">
+            <div class="help-video-block">
+                <a href="javascript:;" class="hide-popup" onclick="CloseHelpVideo()">Close</a>
+                <div class="video-player" style="overflow: hidden; width: 874px; height: 517px">
+                    <iframe id="HelpVideoIframe" width="874" height="517" frameborder="0"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+    <asp:HiddenField ID="hdnMasterUserType" runat="server" />
+    </form>
+
+    <script type="text/javascript">
+        //<![CDATA[
+        var theForm = document.forms['aspnetForm'];
+        if (!theForm) {
+            theForm = document.aspnetForm;
+        }
+        function __doPostBack(eventTarget, eventArgument) {            
+            if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+                theForm.__EVENTTARGET.value = eventTarget;
+                theForm.__EVENTARGUMENT.value = eventArgument;
+                theForm.submit();
+                
+            }
+        }
+        //]]>
+    </script>
+
+</body>
+</html>

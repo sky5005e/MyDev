@@ -1,0 +1,17 @@
+
+Log Entry : 01/31/2014 15:09:32
+Error in: http://localhost:2166/Incentex.Web/admin/CompanyStore/CompanyPrograms/UniformIssuanceStep3.aspx?Id=4&SubId=129&PaymentType=
+Inner Exception : 
+UserInfoID : 3
+File Name : 
+Line : 0
+Column: 0
+Error Message: Thread was being aborted.
+Source: mscorlib
+StackTrace:    at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.End()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse)
+   at admin_CompanyStore_CompanyPrograms_UniformIssuanceStep1.lnkNext_Click(Object sender, EventArgs e) in d:\Surendar\Projects\incentex01\Code\Web\Incentex.Web\admin\CompanyStore\CompanyPrograms\UniformIssuanceStep3.aspx.cs:line 187
+TargetSite:Void AbortInternal()
+__________________________

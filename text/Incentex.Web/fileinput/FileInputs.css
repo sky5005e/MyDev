@@ -1,0 +1,61 @@
+﻿body
+{
+}
+
+.SI-FILES-STYLIZED label.cabinet
+{
+	width: 79px;
+	height: 22px;
+	/*background: url(../images/banner_inner.jpg) 0 0 no-repeat;*/
+	display: block;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+.SI-FILES-STYLIZED label.cabinet input.file
+{
+	position: relative;
+	height: 100%;
+	width: auto;
+	opacity: 0;
+	-moz-opacity: 0;
+	filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+}
+
+#fileupload
+{
+	background: url(../images/banner_inner.jpg) 0 0 no-repeat;
+	
+}
+
+#fileupload1
+{
+	background: url(../images/btn-choose-file.gif) 0 0 no-repeat;
+}
+#fileupload3
+{
+	background: url(../images/program-agrrement-icon.png) 0 0 no-repeat;
+}
+
+/*
+.SI-FILES-STYLIZED label.cabinet1
+{
+	width: 79px;
+	height: 22px;
+	background: url(../images/btn-choose-file.gif) 0 0 no-repeat;
+	display: block;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+
+.SI-FILES-STYLIZED label.cabinet1 input.file
+{
+	position: relative;
+	height: 100%;
+	width: auto;
+	opacity: 0;
+	-moz-opacity: 0;
+	filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+}
+*/

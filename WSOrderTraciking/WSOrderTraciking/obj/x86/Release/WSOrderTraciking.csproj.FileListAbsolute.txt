@@ -18,3 +18,14 @@ C:\Users\g521753\Desktop\Hardidsk\MyDev\WSOrderTraciking\WSOrderTraciking\bin\Re
 C:\Users\g521753\Desktop\Hardidsk\MyDev\WSOrderTraciking\WSOrderTraciking\obj\x86\Release\WSOrderTraciking.ProjectInstaller.resources
 C:\Users\g521753\Desktop\Hardidsk\MyDev\WSOrderTraciking\WSOrderTraciking\obj\x86\Release\WSOrderTraciking.Service1.resources
 C:\Users\g521753\Desktop\Hardidsk\MyDev\WSOrderTraciking\WSOrderTraciking\obj\x86\Release\WSOrderTraciking.csproj.GenerateResource.Cache
+C:\Lenevo\desktop\Hardidsk\MyDev\WSOrderTraciking\WSOrderTraciking\bin\Release\WSOrderTraciking.exe.config
+C:\Lenevo\desktop\Hardidsk\MyDev\WSOrderTraciking\WSOrderTraciking\bin\Release\WSOrderTraciking.exe
+C:\Lenevo\desktop\Hardidsk\MyDev\WSOrderTraciking\WSOrderTraciking\bin\Release\WSOrderTraciking.pdb
+C:\Lenevo\desktop\Hardidsk\MyDev\WSOrderTraciking\WSOrderTraciking\obj\x86\Release\WSOrderTraciking.csprojAssemblyReference.cache
+C:\Lenevo\desktop\Hardidsk\MyDev\WSOrderTraciking\WSOrderTraciking\obj\x86\Release\WSOrderTraciking.ProjectInstaller.resources
+C:\Lenevo\desktop\Hardidsk\MyDev\WSOrderTraciking\WSOrderTraciking\obj\x86\Release\WSOrderTraciking.Service1.resources
+C:\Lenevo\desktop\Hardidsk\MyDev\WSOrderTraciking\WSOrderTraciking\obj\x86\Release\WSOrderTraciking.csproj.GenerateResource.cache
+C:\Lenevo\desktop\Hardidsk\MyDev\WSOrderTraciking\WSOrderTraciking\obj\x86\Release\WSOrderTraciking.csproj.CoreCompileInputs.cache
+C:\Lenevo\desktop\Hardidsk\MyDev\WSOrderTraciking\WSOrderTraciking\obj\x86\Release\WSOrderTraciking.csproj.CopyComplete
+C:\Lenevo\desktop\Hardidsk\MyDev\WSOrderTraciking\WSOrderTraciking\obj\x86\Release\WSOrderTraciking.exe
+C:\Lenevo\desktop\Hardidsk\MyDev\WSOrderTraciking\WSOrderTraciking\obj\x86\Release\WSOrderTraciking.pdb

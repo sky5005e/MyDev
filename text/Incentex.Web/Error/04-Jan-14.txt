@@ -1,0 +1,85 @@
+
+Log Entry : 01/04/2014 13:07:17
+Error in: http://localhost:2166/Incentex.Web/NewDesign/UserFrameItems/IPWizardSetup.aspx?pID=0
+Inner Exception : 
+UserInfoID : 1092
+File Name : 
+Line : 0
+Column: 0
+Error Message: DataBinding: 'Incentex.DAL.SqlRepository.IPItem' does not contain a property with the name 'ProductDescrption'.
+Source: System.Web
+StackTrace:    at System.Web.UI.DataBinder.GetPropertyValue(Object container, String propName)
+   at System.Web.UI.DataBinder.Eval(Object container, String[] expressionParts)
+   at System.Web.UI.DataBinder.Eval(Object container, String expression)
+   at System.Web.UI.TemplateControl.Eval(String expression)
+   at ASP.newdesign_userframeitems_ipwizardsetup_aspx.__DataBinding__control140(Object sender, EventArgs e) in d:\Surendar\Projects\incentex01\Code\Web\Incentex.Web\NewDesign\UserFrameItems\IPWizardSetup.aspx:line 768
+   at System.Web.UI.Control.OnDataBinding(EventArgs e)
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.Control.DataBind()
+   at System.Web.UI.Control.DataBindChildren()
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.Control.DataBind()
+   at System.Web.UI.Control.DataBindChildren()
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.Control.DataBind()
+   at System.Web.UI.WebControls.Repeater.CreateItem(Int32 itemIndex, ListItemType itemType, Boolean dataBind, Object dataItem)
+   at System.Web.UI.WebControls.Repeater.CreateControlHierarchy(Boolean useDataSource)
+   at System.Web.UI.WebControls.Repeater.OnDataBinding(EventArgs e)
+   at System.Web.UI.WebControls.Repeater.DataBind()
+   at NewDesign_UserFrameItems_IPWizardSetup.BindProductItem() in d:\Surendar\Projects\incentex01\Code\Web\Incentex.Web\NewDesign\UserFrameItems\IPWizardSetup.aspx.cs:line 376
+TargetSite:System.Object GetPropertyValue(System.Object, System.String)
+__________________________
+
+Log Entry : 01/04/2014 14:48:35
+Error in: http://localhost:2166/Incentex.Web/Admin/CompanyStore/CompanyPrograms/ViewIssuancePrograms.aspx?id=4
+Inner Exception : 
+UserInfoID : 3
+File Name : 
+Line : 0
+Column: 0
+Error Message: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+Source: mscorlib
+StackTrace:    at System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   at System.ThrowHelper.ThrowArgumentOutOfRangeException()
+   at System.Collections.Generic.List`1.get_Item(Int32 index)
+   at System.Web.UI.WebControls.MenuItemCollection.get_Item(Int32 index)
+   at admin_UserControl_MenuUserControl.PopulateMenu(Int32 SelectedMenuIndex, Int32 SelectedSubMenuIndex, Int64 Id, Int64 SubId, Boolean ShowSubMenu) in d:\Surendar\Projects\incentex01\Code\Web\Incentex.Web\admin\UserControl\MenuUserControl.ascx.cs:line 168
+TargetSite:Void ThrowArgumentOutOfRangeException(System.ExceptionArgument, System.ExceptionResource)
+__________________________
+
+Log Entry : 01/04/2014 14:50:15
+Error in: http://localhost:2166/Incentex.Web/Admin/CompanyStore/CompanyPrograms/ViewIssuancePrograms.aspx?id=4
+Inner Exception : 
+UserInfoID : 3
+File Name : 
+Line : 0
+Column: 0
+Error Message: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+Source: mscorlib
+StackTrace:    at System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   at System.ThrowHelper.ThrowArgumentOutOfRangeException()
+   at System.Collections.Generic.List`1.get_Item(Int32 index)
+   at System.Web.UI.WebControls.MenuItemCollection.get_Item(Int32 index)
+   at admin_UserControl_MenuUserControl.PopulateMenu(Int32 SelectedMenuIndex, Int32 SelectedSubMenuIndex, Int64 Id, Int64 SubId, Boolean ShowSubMenu) in d:\Surendar\Projects\incentex01\Code\Web\Incentex.Web\admin\UserControl\MenuUserControl.ascx.cs:line 168
+TargetSite:Void ThrowArgumentOutOfRangeException(System.ExceptionArgument, System.ExceptionResource)
+__________________________
+
+Log Entry : 01/04/2014 14:54:25
+Error in: http://localhost:2166/Incentex.Web/Admin/CompanyStore/CompanyPrograms/ViewIssuancePrograms.aspx?id=4
+Inner Exception : 
+UserInfoID : 3
+File Name : 
+Line : 0
+Column: 0
+Error Message: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+Source: mscorlib
+StackTrace:    at System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   at System.ThrowHelper.ThrowArgumentOutOfRangeException()
+   at System.Collections.Generic.List`1.get_Item(Int32 index)
+   at System.Web.UI.WebControls.MenuItemCollection.get_Item(Int32 index)
+   at admin_UserControl_MenuUserControl.PopulateMenu(Int32 SelectedMenuIndex, Int32 SelectedSubMenuIndex, Int64 Id, Int64 SubId, Boolean ShowSubMenu) in d:\Surendar\Projects\incentex01\Code\Web\Incentex.Web\admin\UserControl\MenuUserControl.ascx.cs:line 168
+TargetSite:Void ThrowArgumentOutOfRangeException(System.ExceptionArgument, System.ExceptionResource)
+__________________________

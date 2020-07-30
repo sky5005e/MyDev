@@ -21,3 +21,5 @@ C:\Users\Sky\Desktop\ProFinal\WFDownloadFile\WFDownloadFile\bin\Debug\WFDownload
 C:\Users\Sky\Desktop\ProFinal\WFDownloadFile\WFDownloadFile\bin\Debug\WFDownloadFile.pdb
 C:\Users\Sky\Desktop\ProFinal\WFDownloadFile\WFDownloadFile\obj\x86\Debug\WFDownloadFile.exe
 C:\Users\Sky\Desktop\ProFinal\WFDownloadFile\WFDownloadFile\obj\x86\Debug\WFDownloadFile.pdb
+C:\Users\g521753\Desktop\Hardidsk\MyDev\WFDownloadFile\WFDownloadFile\obj\x86\Debug\WFDownloadFile.exe
+C:\Users\g521753\Desktop\Hardidsk\MyDev\WFDownloadFile\WFDownloadFile\obj\x86\Debug\WFDownloadFile.pdb

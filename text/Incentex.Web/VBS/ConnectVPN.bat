@@ -1,0 +1,1 @@
+START C:\"Program Files (x86)"\"Cisco Systems"\"VPN Client"\vpnclient connect WorldVPN user incentex pwd incentex123

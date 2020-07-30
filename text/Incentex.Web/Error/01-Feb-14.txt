@@ -1,0 +1,36 @@
+
+Log Entry : 02/01/2014 14:51:11
+Error in: http://10.2.5.5:91/Login.aspx
+Inner Exception : 
+UserInfoID : 
+File Name : 
+Line : 0
+Column: 0
+Error Message: Length cannot be less than zero.
+Parameter name: length
+Source: mscorlib
+StackTrace:    at System.String.InternalSubStringWithChecks(Int32 startIndex, Int32 length, Boolean fAlwaysCopy)
+   at System.String.Substring(Int32 startIndex, Int32 length)
+   at Login.GetOSName(String UserAgentDetails) in d:\Surendar\Projects\incentex01\Code\Web\Incentex.Web\login.aspx.cs:line 413
+   at Login.UdpateUserLoginDetailTC() in d:\Surendar\Projects\incentex01\Code\Web\Incentex.Web\login.aspx.cs:line 393
+   at Login.btnLogin_Click(Object sender, EventArgs e) in d:\Surendar\Projects\incentex01\Code\Web\Incentex.Web\login.aspx.cs:line 250
+TargetSite:System.String InternalSubStringWithChecks(Int32, Int32, Boolean)
+__________________________
+
+Log Entry : 02/01/2014 14:52:29
+Error in: http://10.2.5.5:91/login.aspx
+Inner Exception : 
+UserInfoID : 
+File Name : 
+Line : 0
+Column: 0
+Error Message: Length cannot be less than zero.
+Parameter name: length
+Source: mscorlib
+StackTrace:    at System.String.InternalSubStringWithChecks(Int32 startIndex, Int32 length, Boolean fAlwaysCopy)
+   at System.String.Substring(Int32 startIndex, Int32 length)
+   at Login.GetOSName(String UserAgentDetails) in d:\Surendar\Projects\incentex01\Code\Web\Incentex.Web\login.aspx.cs:line 413
+   at Login.UdpateUserLoginDetailTC() in d:\Surendar\Projects\incentex01\Code\Web\Incentex.Web\login.aspx.cs:line 393
+   at Login.btnLogin_Click(Object sender, EventArgs e) in d:\Surendar\Projects\incentex01\Code\Web\Incentex.Web\login.aspx.cs:line 227
+TargetSite:System.String InternalSubStringWithChecks(Int32, Int32, Boolean)
+__________________________

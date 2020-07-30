@@ -8,3 +8,14 @@ C:\Users\Sky\Desktop\ProFinal\WSOrderTraciking\WSOrderTraciking\obj\x86\Debug\WS
 C:\Users\Sky\Desktop\ProFinal\WSOrderTraciking\WSOrderTraciking\obj\x86\Debug\WSOrderTraciking.Service1.resources
 C:\Users\Sky\Desktop\ProFinal\WSOrderTraciking\WSOrderTraciking\obj\x86\Debug\GenerateResource.read.1.tlog
 C:\Users\Sky\Desktop\ProFinal\WSOrderTraciking\WSOrderTraciking\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Lenevo\desktop\Hardidsk\MyDev\WSOrderTraciking\WSOrderTraciking\bin\Debug\WSOrderTraciking.exe.config
+C:\Lenevo\desktop\Hardidsk\MyDev\WSOrderTraciking\WSOrderTraciking\bin\Debug\WSOrderTraciking.exe
+C:\Lenevo\desktop\Hardidsk\MyDev\WSOrderTraciking\WSOrderTraciking\bin\Debug\WSOrderTraciking.pdb
+C:\Lenevo\desktop\Hardidsk\MyDev\WSOrderTraciking\WSOrderTraciking\obj\x86\Debug\WSOrderTraciking.csprojAssemblyReference.cache
+C:\Lenevo\desktop\Hardidsk\MyDev\WSOrderTraciking\WSOrderTraciking\obj\x86\Debug\WSOrderTraciking.ProjectInstaller.resources
+C:\Lenevo\desktop\Hardidsk\MyDev\WSOrderTraciking\WSOrderTraciking\obj\x86\Debug\WSOrderTraciking.Service1.resources
+C:\Lenevo\desktop\Hardidsk\MyDev\WSOrderTraciking\WSOrderTraciking\obj\x86\Debug\WSOrderTraciking.csproj.GenerateResource.cache
+C:\Lenevo\desktop\Hardidsk\MyDev\WSOrderTraciking\WSOrderTraciking\obj\x86\Debug\WSOrderTraciking.csproj.CoreCompileInputs.cache
+C:\Lenevo\desktop\Hardidsk\MyDev\WSOrderTraciking\WSOrderTraciking\obj\x86\Debug\WSOrderTraciking.csproj.CopyComplete
+C:\Lenevo\desktop\Hardidsk\MyDev\WSOrderTraciking\WSOrderTraciking\obj\x86\Debug\WSOrderTraciking.exe
+C:\Lenevo\desktop\Hardidsk\MyDev\WSOrderTraciking\WSOrderTraciking\obj\x86\Debug\WSOrderTraciking.pdb

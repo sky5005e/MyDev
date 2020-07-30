@@ -14,7 +14,7 @@ namespace WSftp
         private string uri;
         private int bufferSize = 1024;
 
-        public bool Passive = true;
+        public bool Passive = false;
         public bool Binary = true;
         public bool EnableSsl = false;
         public bool Hash = false;

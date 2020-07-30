@@ -100,7 +100,8 @@ namespace WSOrderTraciking
                         @"<orders>" +
                                     @"<order order_id='" + objOrder.INVOrderTrackingID + "'>" +
                                     @"<bill_to>" + objOrder.INVCustomer + "</bill_to>" +
-                                    @"<ship_to>" + objOrder.INVOrderNumber + "</ship_to>";
+                                    @"<ship_to>" + objOrder.ORDOrderNumber + "</ship_to>";
+                                    // @"<ship_to>" + objOrder.INVOrderNumber + "</ship_to>";
 
                 String orderItems = String.Empty;
 
@@ -213,6 +214,8 @@ namespace WSOrderTraciking
                     objOrder.INVShipDate = Convert.ToString(ds.Tables[0].Rows[0]["INVShipDate"]).Trim();
                     objOrder.INVDesc = Convert.ToString(ds.Tables[0].Rows[0]["INVDesc"]).Trim();
                     objOrder.INVDeliveryIns = Convert.ToString(ds.Tables[0].Rows[0]["INVDeliveryIns"]).Trim();
+                    objOrder.ORDOrderNumber = Convert.ToString(ds.Tables[0].Rows[0]["ORDOrderNumber"]).Trim();
+
 
                     // Add all the items list
                     objOrder.OrderItems = lstOrderItems;
@@ -236,7 +239,7 @@ namespace WSOrderTraciking
 
     public class OrderDetails
     {
-
+        public String ORDOrderNumber { get;set;}
         public String BilAddr1 { get; set; }
         public String BilAddr2 { get; set; }
         public String BilAddr3 { get; set; }

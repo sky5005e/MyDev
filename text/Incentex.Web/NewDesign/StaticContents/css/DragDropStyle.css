@@ -1,0 +1,10 @@
+﻿.ajax__fileupload_selectFileContainer { text-align: center;padding-left: 443px;}
+.ajax__fileupload_selectFileButton { background-color: #E5E5E5 !important; color: Black !important;}
+#AjaxFileUpload1_Html5DropZone{color: #323232;font-family: AvenirLTStd-Medium;font-size: 18px;line-height: 24px;padding: 28px 100px 18px;}
+.ajax__fileupload_dropzone{border-style: none !important;}
+.ajax__fileupload_uploadbutton{margin-right: 420px;}
+.ajax__fileupload_fileItemInfo .pendingState {color: #323232 !important;}
+.ajax__fileupload_fileItemInfo .removeButton {background-color: #B1B1B1 !important;}
+.ajax__fileupload_uploadbutton {background-color: #8A2D1D !important;}
+.ajax__fileupload_queueContainer {/*border: 1px solid #A9A9A9 !important; */border: none !important;margin-top: 4px !important;margin-bottom: 4px !important;}
+.ajax__fileupload {border: none ! important;}

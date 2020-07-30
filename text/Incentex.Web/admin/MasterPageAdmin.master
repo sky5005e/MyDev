@@ -1,0 +1,164 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPageAdmin.master.cs"
+    Inherits="admin_MasterPageAdmin" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<%@ Register Src="~/UserControl/CommonHead.ascx" TagPrefix="uc" TagName="CommonHead" %>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Incentex Admin</title>
+    <uc:CommonHead ID="ucCommonHead" runat="server" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+
+    <script type="text/javascript" language="javascript">
+        function ImageButton() {
+            var siteurl = '<%=ConfigurationSettings.AppSettings["siteurl"].ToString()%>';
+            window.location = siteurl + "admin/index.aspx";
+        }
+        function OpenServiceTicket() {
+            var siteurl = '<%=ConfigurationSettings.AppSettings["siteurl"].ToString()%>';
+            window.location = siteurl + "admin/ServiceTicketCenter/OpenServiceTicket.aspx";
+        }
+        function OnLogoutClick() {
+            return true;
+        } 
+    </script>
+   
+
+    <form id="frmMain" runat="server">
+    <div id="wrapper" class="clearfix">
+        <div id="header" class=" clearfix">
+            <div class="top_logo_section">
+                <h1 id="logo">
+                    <%--<a href="login.aspx" title="Incentex">Incentex</a>--%>
+                    <asp:HyperLink ID="lnkLogin" NavigateUrl="~/admin/index.aspx" runat="server" title="Incentex">Incentex</asp:HyperLink>
+                </h1>
+                <%--<a href="http://showmypc.com/mac/java-client.html?ci=world-link&sh=1" onclick="window.open(this.href,'window_name','width=550,height=350'); return false;">
+                    <div style="height: 48px; width: 155px; background-image: url(http://showmypc.com/images/buttons/s2.png);
+                        background-repeat: no-repeat;margin-top:60px;float:right;">
+                        <div style="position: relative; top: 15px; left: 20px; font-size: 14px; font-weight: bold;
+                            font-family: Tahoma; color: #000000; text-decoration: none; text-align: center;">
+                            View My PC
+                        </div>
+                    </div>
+                </a>--%>
+            </div>
+            <div class="black_round_top">
+                <span></span>
+            </div>
+            <div class="header_section black_round_middle inner_top_middle">
+                <%if (Request.AppRelativeCurrentExecutionFilePath.ToString().ToLower() == "~/login.aspx")
+                  { %>
+                <div class="banner">
+                    <h2>
+                        <img src="images/world-link-system-small.png" alt="" /></h2>
+                </div>
+                <%}
+                  else
+                  { %>
+                <div class="banner innner_banner">
+                    <h2>
+                        <asp:Image ID="Image1" ImageUrl="~/Images/world-link-system-head.png" alt="" runat="server" />
+                        <%--<img src='<%#ResolveClientUrl("../images/world-link-system-head.png")%>' alt="" />--%>
+                    </h2>
+                    <%if (IncentexGlobal.CurrentMember != null)
+                      { %>
+                    <asp:LinkButton ID="btnLogout" runat="server" OnClientClick="return OnLogoutClick();" OnClick="btnLogout_Click"  CssClass="btn_red"><span>Exit System </span></asp:LinkButton>
+                    <asp:LinkButton ID="lnklogout" runat="server" OnClick="btnLogout_Click" Visible="true" />
+                    <%} %>
+                </div>
+                <%} %>
+            </div>
+        </div>
+        <div id="content" class="black_round_middle">
+            <%if (Request.AppRelativeCurrentExecutionFilePath.ToString().ToLower() == "~/login.aspx")
+              { %>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+            </asp:ContentPlaceHolder>
+            <%}
+              else
+              { %>
+            <div class="black_round_box">
+                <div class="black2_round_top">
+                    <span></span>
+                </div>
+                <div class="black2_round_middle">
+                    <div class="header_bg">
+                        <div class="header_bgr" id="divheder" runat="server">
+                            <span class="title alignleft" runat="server" id="spantitle" style="width: 36%;">
+                                <asp:Label ID="lblPageHeading" runat="server"></asp:Label>
+                            </span>
+                            <%--<a href="~/login.aspx"
+                                        class="grey_btn alignright" title="Return to Login Page"><span>Return to Login Page</span></a>--%>
+                            <span class="alignright" runat="server" id="spandate" style="width: 36%; padding-left: 10px;">
+                                <img id="imgHomeBtn" class="grey_btn alignright" runat="server" src="~/Images/home_button.png"
+                                    onclick="javascript:ImageButton();" title="Home" />
+                                <%--<asp:ImageButton ID="imgBtn" CssClass="grey_btn alignright" PostBackUrl="~/admin/index.aspx"
+                                    runat="server" ImageUrl="~/Images/home_button.png" />--%>
+                                <asp:HyperLink ID="lnkLoginUrl" NavigateUrl="~/login.aspx" CssClass="grey_btn alignright"
+                                    runat="server">
+                                    <span runat="server" id="spanlogin" title="Back"><< Go Back</span></asp:HyperLink>
+                                <asp:Panel runat="server" ID="pnlLoadVideoUserControl">
+                                </asp:Panel>
+                                <a href="" id="aOpenServiceTicket" runat="server" title="Open Support Ticket">
+                                    <img id="imgOpenServiceTicket" runat="server" src="" alt="Open Support Tickets" class="grey_btn alignright" /></a>
+                                <a href="" id="aSearchServiceTicket" runat="server" title="Support Tickets">
+                                    <img id="imgSupportTickets" runat="server" src="" alt="Support Tickets" class="grey_btn alignright" />
+                                    <asp:HyperLink ID="hlRecentlyUpdatedTickets" ToolTip="Recently Updated Tickets" NavigateUrl="~/admin/ServiceTicketCenter/RecentlyUpdated.aspx"
+                                        CssClass="grey_btn alignright" runat="server" Visible="false">
+                                            <span>&nbsp;</span></asp:HyperLink>
+                                </a></span><span class="date" id="spanrealdate" runat="server" style="width: 20%;
+                                    display: inline-block;">
+                                    <asp:Label ID="lblSystemDate" runat="server"></asp:Label>
+                                </span>
+                            <div class="alignnone">
+                                &nbsp;</div>
+                        </div>
+                    </div>
+                    <div class="alignnone">
+                        &nbsp;</div>
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+                <div class="black2_round_bottom">
+                    <span></span>
+                </div>
+                <div class="alignnone">
+                    &nbsp;</div>
+            </div>
+            <%} %>
+        </div>
+        <div id="footer">
+            <div class="black_round_bottom">
+                <span></span>
+            </div>
+            <div class="copyright">
+                Copyright &copy; <asp:Label ID="lblCopyRightYear" runat="server"></asp:Label> Incentex. All rights reserved
+            </div>
+        </div>
+    </div>
+    </form>
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder3" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <script type="text/javascript">
+        var title = document.getElementsByTagName("title")[0].innerHTML;
+        var cid = "<%=Common.CompID %>";
+        var uid = "<%= Common.UserID %>";
+        var er = "<%= PageBase.IsError %>";
+        var cart = "<%=Common.IsCartOrderComplete %>";
+        var path = null;
+        if (title == 'My Shopping Cart' || title == 'My Check Out') {
+            path = "/" + title + " /cid_" + cid + "&uid_" + uid + "&er_" + er + "&cart_" + cart + "";
+        }
+        else {
+            path = "/" + title + "/cid_" + cid + "&uid_" + uid + "&er_" + er + "";
+        }
+        var mouseflowPath = path;
+
+    </script>
+
+</body>
+</html>

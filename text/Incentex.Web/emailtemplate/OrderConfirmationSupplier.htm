@@ -1,0 +1,339 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Untitled Page</title>
+</head>
+<body>
+    <div style="font-size: 12px;">
+        <table width="580" border="0" cellpadding="0" cellspacing="0" background="{siteurl}Images/news_lettar_bg.gif"
+            style="background-repeat: repeat-x; background-position: top">
+            <tr>
+                <td>
+                    <table width="100%" border="0" align="center" cellspacing="0" cellpadding="0" style="font-family: Verdana, Arial, Helvetica, sans-serif">
+                        <tr>
+                            <td height="82" valign="top">
+                                <a href="http://www.world-link.us.com" title="Incentex">
+                                    <img src="{siteurl}Images/incentex_logo.png" alt="Incentex" title="Incentex" border="0" /></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td valign="top" height="120">
+                                <img alt="Incentex" src="{siteurl}Images/banner.png" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px;">
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0" style="line-height: 20px;">
+                                    <tr>
+                                        <td>
+                                            <strong>Dear {FullName},</strong>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="10">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="100%" style="padding: 10px;">
+                                <!--Please Note That The Following Order Number {OrderNumber} Has Placed For Confirmation.-->
+                                <!--Please note shipping charges will be added to the total of this invoice and charged
+                                to your credit card/ payroll deduction. -->
+                                {firstnote}
+                                
+                                <br />
+                                <br />
+                                <table style="font-size: 12px; font-family: Arial, Helvetica, sans-serif; line-height: 17px;
+                                    color: #666" width="100%" border="0">
+                                    <tr style="vertical-align: top;">
+                                        <td width="50%">
+                                            <table>
+                                                <tr>
+                                                    <td width="20%" style="font-weight: bold;">
+                                                        Order Number: {OrderNumber}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="20%" style="font-weight: bold;">
+                                                        Reference Name : {referencename}
+                                                    </td>
+                                                </tr>
+                                                <!--<tr>
+                                                    <td width="30%" style="font-weight: bold;">
+                                                        Payment Method : {PaymentMethod}
+                                                    </td>
+                                                </tr>-->
+                                                <!--  <tr>
+                                                    <td width="30%" style="font-weight: bold;">
+                                                        Purchased By : {FullName1}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="15%" style="font-weight: bold;">
+                                                        Phone : {PhoneCustomer}
+                                                    </td>
+                                                </tr>
+                                                 <tr>
+                                                    <td width="30%" style="font-weight: bold;">
+                                                        Email : {EmailCustomer}
+                                                    </td>
+                                                </tr>-->
+                                            </table>
+                                        </td>
+                                        <td width="50%">
+                                            <table>
+                                                <tr>
+                                                    <td width="15%" style="font-weight: bold;">
+                                                        Ordered Date : {OrderDate}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="20%" style="font-weight: bold;">
+                                                        Order Status : {OrderStatus}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="30%" style="font-weight: bold;">
+                                                        {Payment Method :} {PaymentType}
+                                                    </td>
+                                                </tr>
+                                                <!--<tr>
+                                                    <td width="15%" style="font-weight: bold;">
+                                                        Credit Type : {CreditType}
+                                                    </td>
+                                                </tr>-->
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <table width="100%" border="0">
+                                                <tr>
+                                                    <td width="30%" style="font-size: 12px; font-family: Arial, Helvetica, sans-serif;
+                                                        line-height: 17px; color: #666;font-weight: bold;">
+                                                        Order Special Instruction:
+                                                    </td>
+                                                    <td width="70%" style="text-align:left;">
+                                                        {OrderNotes}
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <br />
+                                <br />
+                                <table style="font-size: 12px; font-family: Arial, Helvetica, sans-serif; line-height: 17px;
+                                    color: #666" width="100%" border="0">
+                                    <tr>
+                                       
+                                        <td>
+                                            <table>
+                                                <tr>
+                                                    <td width="30%" style="font-weight: bold;">
+                                                        {Shipping Address}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="20%" style="font-weight: bold;">
+                                                        {NameView1} {Name1}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="30%" style="font-weight: bold;">
+                                                        {CompanyNameView1} {CompanyName1}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="20%" style="font-weight: bold;">
+                                                        {AddressView1} {Address11}
+                                                    </td>
+                                                </tr>
+                                                <!--<tr>
+                                                    <td width="30%" style="font-weight: bold;">
+                                                       Address 2 : {Address22}
+                                                    </td>
+                                                </tr>-->
+                                                <tr>
+                                                    <td width="20%" style="font-weight: bold;">
+                                                        {CityView1} {City1}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="20%" style="font-weight: bold;">
+                                                        {CountyView1} {County1}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="30%" style="font-weight: bold;">
+                                                        {StateView1} {State1}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="20%" style="font-weight: bold;">
+                                                        {ZipView1} {Zip1}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="30%" style="font-weight: bold;">
+                                                        {CountryView1} {Country1}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="20%" style="font-weight: bold;">
+                                                        {PhoneView1} {Phone1}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="30%" style="font-weight: bold;">
+                                                        {EmailView1} {Email1}
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <!--   <br />
+                                <br />
+                               <table style="font-size: 12px; font-family: Arial, Helvetica, sans-serif; line-height: 17px;
+                                    color: #666" width="100%" border="0">
+                                    <tr>
+                                        <td width="100%" style="font-weight: bold;">
+                                            {Payment Method :} {PaymentType}
+                                        </td>
+                                    </tr>
+                                </table>-->
+                                
+                                <table style="font-size: 12px; font-family: Arial, Helvetica, sans-serif; line-height: 17px;
+                                    color: #666" width="100%" border="0">
+                                    
+                                    <tr>
+                                        <td colspan="7" style="width: 100%;text-align:right" align="right">
+                                            <table style="font-size: 12px; font-family: Arial, Helvetica, sans-serif; line-height: 17px;
+                                                color: #666; text-align: right;" width="100%" border="0">
+                                                <tr>
+                                                    <td align="right" style="text-align:right">
+                                                        <table>
+                                                            <tr>
+                                                                <td width="20%" style="font-weight: bold;">
+                                                                    {ShippingCostView} {ShippingCost}
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td width="15%" style="font-weight: bold;">
+                                                                    {SalesTaxView} {Saletax}
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td width="20%" style="font-weight: bold;">
+                                                                    {OrderTotalView} {OrderTotal}
+                                                                </td>
+                                                            </tr>
+                                                            <!--<tr>
+                                                                <td width="45%" style="font-weight: bold;">
+                                                                    Purchases Not Eligable for Credit Use: {PurchasesNotEligableforCreditUse}
+                                                                </td>
+                                                            </tr>-->
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    {innermesaageforsupplier}
+                                    <!--<tr>
+                                        <td colspan="7">
+                                            <table width="100%" border="1">
+                                                <tr>
+                                                    <td align="center" colspan="2">
+                                                        (SupplierName)
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="width: 50%">
+                                                        <b>Vendor</b>: {SupCompanyName}
+                                                        <br />
+                                                        {Address1}
+                                                        <br />
+                                                        {vendorcityname},{vendorstate} {companyzip}
+                                                    </td>
+                                                    <td style="width: 50%">
+                                                        <b>Ship To Address</b>:{ShipComName}
+                                                        <br />
+                                                        {ShipToAddress1}
+                                                        <br />
+                                                        {ShipToAddress2}
+                                                        <br />
+                                                        {ShipZipCode}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="width: 50%">
+                                                        <b>Contact:</b>{ContactName}
+                                                        <br />
+                                                        <b>Account #:</b>{BankAccountNumber}
+                                                        <br />
+                                                        <b>Telephone:</b>{TePhone}
+                                                        <br />
+                                                        <b>Email:</b>{EmailA}
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>-->
+                                </table>
+                                <br />
+                                <br />
+                                If you have any questions please contact us at <a href="mailto:support@world-link.us.com">
+                                    support@world-link.us.com</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="10">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px;">
+                                <font color="#4e3939" style="line-height: 20px;">Thank you,<br />
+                                    World-Link System Support Team<br />
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="{siteurl}Images/sparater.jpg" alt="" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                &nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="color: #4e3939;">
+                                <em style="font-size: 11px"><b>NOTE: </b>This message has been sent from an unmonitored
+                                    email address. Replies will be discarded.
+                                    <br />
+                                    Please DO NOT REPLY TO THIS EMAIL. 
+                                    <br />
+                                    If you need to contact us, please use the email address <a href="mailto:support@world-link.us.com">support@world-link.us.com</a></em>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="10">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="{siteurl}Images/sparater.jpg" alt="" />
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

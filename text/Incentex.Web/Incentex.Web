@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Incentex.Web", "..\Incentex.Web", "{5F7160AF-74FC-4D3A-A110-381A45FC99D6}"
+	ProjectSection(WebsiteProperties) = preProject
+		SccProjectName = ""
+		SccAuxPath = ""
+		SccLocalPath = ""
+		SccProvider = ""
+		TargetFramework = "3.5"
+		Debug.AspNetCompiler.VirtualPath = "/Incentex.Web"
+		Debug.AspNetCompiler.PhysicalPath = "D:\Projects\Incentex\Incentex.Web\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\Incentex.Web\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/Incentex.Web"
+		Release.AspNetCompiler.PhysicalPath = "D:\Projects\Incentex\Incentex.Web\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\Incentex.Web\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "3236"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Incentex.DA", "..\Incentex.DA\Incentex.DA.csproj", "{AF03AB7B-E84A-4E6B-9749-0962035611C1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5F7160AF-74FC-4D3A-A110-381A45FC99D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F7160AF-74FC-4D3A-A110-381A45FC99D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F7160AF-74FC-4D3A-A110-381A45FC99D6}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F7160AF-74FC-4D3A-A110-381A45FC99D6}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{AF03AB7B-E84A-4E6B-9749-0962035611C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF03AB7B-E84A-4E6B-9749-0962035611C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF03AB7B-E84A-4E6B-9749-0962035611C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF03AB7B-E84A-4E6B-9749-0962035611C1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

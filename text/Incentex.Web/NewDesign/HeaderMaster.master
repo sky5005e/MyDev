@@ -1,0 +1,104 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="HeaderMaster.master.cs" Inherits="HeaderMaster" %>
+<%@ Register TagPrefix="uc" TagName="CommonHeader" Src="~/NewDesign/UserControl/NewCommonHeader.ascx" %>
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <uc:CommonHeader ID="ucCommonHead" runat="server" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=1020" />
+    <title>Incentex</title>
+
+    <script type="text/javascript">
+        // Full background Image
+        $(document).ready(function() {
+            // must use this in every master page for every popup
+            $('body').append('<span style="display:none;" class="fade-layer"></span>');
+
+            $('.popup-openlink').click(function() {
+                $('.fade-layer').show();
+            });
+            var siteurl = '<%= System.Configuration.ConfigurationManager.AppSettings["NewDesignSiteurl"]%>';
+            var img_src = siteurl + 'StaticContents/img/bg.jpg';
+            
+            $(document).bgStretcher({
+                images: [img_src],
+                imageWidth: 1400, imageHeight: 768
+            });
+            var img = $('<img class="image_preload" src="' + img_src + '" />');
+            $('body').append(img);
+            $('.image_preload').load(function() {
+                //$("#header, #container , #footer").show();
+            });
+            var hei = $(window).height();
+            hei1 = [(hei - 61) / 2] - 256;
+            $('.loginBlock').css('margin-top', hei1);
+            $(window).resize(function() {
+                var hei = $(window).height();
+                hei1 = [(hei - 61) / 2] - 256;
+                $('.loginBlock').css('margin-top', hei1);
+            });
+
+            //
+
+            $('.contact-link').click(function() {
+                $('.contactblock-outer').slideToggle('slow');
+            });
+        });
+    </script>
+
+    <!--[if IE ]>
+<link rel="stylesheet" type="text/css" href="NewDesign/css/ie.css">
+<![endif]-->
+    <!--[if IE 9 ]>
+<link rel="stylesheet" type="text/css" href="NewDesign/css/ie9.css">
+<![endif]-->
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+<div class="contactblock-outer">
+  <div class="contact-block">
+    	<h3>Contact Us</h3>
+      <div class="contact-txt cf"><span>Customer Support: 772-453-2764</span><a href="#" class="live-chat-off">LIVE CHAT NOT AVAILABLE</a></div>
+      <div class="contact-form">
+      	<ul class="cf">
+        	<li><span class="lbl-txt">Login Email</span><input type="text" class="input-contact" placeholder="me@email.com" title="me@email.com"></li>
+         <%-- <li><span class="lbl-txt">Reason</span><input type="text" class="input-contact" ></li>--%>
+          <li><span class="lbl-txt">Subject</span><input type="text" class="input-contact" ></li>
+          <li><span class="lbl-txt">Message</span><textarea class="textarea-contact"></textarea></li>
+          <li><a href="#" class="contact-btn" title="SUBMIT">SUBMIT</a></li>
+        </ul>
+      </div>
+    </div>
+   </div>
+    <!-- start header -->
+    <header id="header">
+    
+  <div class="wrapper"> 
+  
+    <!-- start logo -->
+    <h1 id="logo"><a href='<%= System.Configuration.ConfigurationManager.AppSettings["siteurl"] + "login.aspx" %>' title="Incentex">Incentex</a></h1>
+    <!-- end logo --> 
+   	<ul id="mainNavigation" class="login-nav">
+	    <li><a href="#" title="services"><em></em>services</a></li>
+	    <li><a href="#" title="logistics"><em></em>logistics</a></li>
+	    <li><a href="javascript:;" class="contact-link" title="contact"><em></em>contact</a></li>
+	</ul> 
+  </div>
+</header>
+    <!-- end header -->
+    <!-- start content -->
+    <section id="container" class="cf">
+     <form id="FormMaster" runat="server">
+        <asp:ContentPlaceHolder id="ContentPlaceHolderMaster" runat="server">
+        
+        </asp:ContentPlaceHolder>
+        </form>
+     </section>
+    <!-- end content -->
+    <!-- start footer -->
+    <footer id="footer">Copyright &copy; 2013 Incentex. All rights reserved. <a href="#" class="popup-openlink" title="Terms of service">Terms of service</a>.</footer>
+    <!-- end footer -->
+</body>
+</html>
+
