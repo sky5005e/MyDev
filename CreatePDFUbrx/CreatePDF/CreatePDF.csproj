@@ -71,6 +71,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AirtelBills.cs" />
     <Compile Include="CommonCls.cs" />
     <Compile Include="HotelMain.cs" />
     <Compile Include="Hotel_Invoice.cs" />

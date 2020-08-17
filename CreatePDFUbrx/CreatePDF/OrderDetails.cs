@@ -29,6 +29,11 @@ namespace CreatePDF
             new Hotel_Invoice().GenerateInvoicePDF(path, objhotels);
         }
 
+        public void GenerateAirtelPdfInvoice(String path)
+        {
+            new AirtelBills().GenerateInvoicePDF(path);
+        }
+
         public void GenerateHotelMainsPdfInvoice(String path, HotelsDetails objhotels)
         {
             new HotelMain().GenerateInvoicePDF(path, objhotels);

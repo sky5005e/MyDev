@@ -17,7 +17,7 @@ namespace CreatePDF
         static void Main(string[] args)
         {
             
-            String pdfpath = GenerateHotelBills();
+            String pdfpath = GenerateAirtelBills();
             Console.WriteLine(pdfpath);
             Console.Read();
             
@@ -57,6 +57,14 @@ namespace CreatePDF
             obj.date = "2020-03-21";
             string PDFpath = Hotels + "receipt_" + Guid.NewGuid().ToString() + ".pdf";
             new InvoiceInfo().GenerateHotelsPdfInvoice(PDFpath, obj);
+            return PDFpath;
+        }
+
+        public static string GenerateAirtelBills()
+        {
+          
+            string PDFpath = @"C:\Users\g521753\Desktop\SKY-Drive\localbills\" + "Airtel Online Prepaid Recharge, Online Mobile Recharge"+ Guid.NewGuid().ToString()+".pdf";
+            new InvoiceInfo().GenerateAirtelPdfInvoice(PDFpath);
             return PDFpath;
         }
     }
