@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Results>
-    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="file:///C:/Users/devraj.gadhavi.INIC/Desktop/0010000106_Z.ait.Incentex.Test.wsdl" filename="ipostep_vP.0010000106.in_WCSX_com.sap.b1i.vplatform.runtime_INB_WS_CALL_SYNC_XPT_INB_WS_CALL_SYNC_XPT.wsdl" />
-  </Results>
-</DiscoveryClientResultsFile>
